@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaks UI Refinement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Simulating the flame pattern background */
+        .bg-pattern {
+            background-color: #1a1a1a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23262626' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+
+<body class="bg-black flex justify-center h-screen w-full overflow-hidden">
+
+    <div class="w-full max-w-[400px] bg-pattern h-full flex flex-col relative text-white">
+
+        <div
+            class="bg-neutral-900/90 border-b border-orange-900/30 pb-2 pt-8 px-4 flex justify-between items-start relative z-20">
+            <div class="w-16"></div>
+
+            <div class="text-center">
+                <h1 class="text-lg font-bold text-white">Streaks</h1>
+                <p class="text-xl font-mono text-white tracking-widest">05:44:01</p>
+            </div>
+
+            <div class="w-16 flex justify-end">
+                <div
+                    class="border border-orange-500 text-orange-500 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">
+                    Premium
+                </div>
+            </div>
+        </div>
+
+        <div class="h-0.5 w-full bg-orange-600 shadow-[0_0_10px_rgba(234,88,12,0.8)]"></div>
+
+        <div class="bg-neutral-900/80 px-4 pt-4 flex relative z-10">
+            <button class="flex-1 pb-3 text-sm font-bold text-orange-500 border-b-2 border-orange-500">Solo
+                Streaks</button>
+            <button
+                class="flex-1 pb-3 text-sm font-bold text-neutral-500 border-b-2 border-transparent hover:text-neutral-400">Friend
+                Streak</button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-4 space-y-4 pb-24">
+
+            <div class="bg-[#1e1e1e] rounded-xl p-5 relative shadow-lg border border-neutral-800">
+                <div class="flex justify-between items-start">
+                    <div class="z-10 relative">
+                        <h2 class="text-xl font-bold mb-1">Programming</h2>
+                        <div class="flex items-center gap-1 mb-1 text-sm text-neutral-300">
+                            <span>Days: 0</span>
+                            <i data-lucide="flame" class="w-4 h-4 text-neutral-500"></i>
+                        </div>
+                        <p class="text-xs text-neutral-500 mb-5">Commitment Streak</p>
+
+                        <button
+                            class="bg-gradient-to-b from-orange-500 to-orange-700 text-white text-sm font-bold py-3 px-8 rounded-full shadow-lg hover:brightness-110 active:scale-95 transition-all w-[160px]">
+                            Mark As Done
+                        </button>
+                    </div>
+
+                    <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-90">
+                        <i data-lucide="laptop" class="w-20 h-20 text-white"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#1e1e1e] rounded-xl p-5 relative shadow-lg border border-neutral-800">
+                <div class="flex justify-between items-start">
+                    <div class="z-10 relative">
+                        <h2 class="text-xl font-bold mb-1">Meditation</h2>
+                        <div class="flex items-center gap-1 mb-1 text-sm text-neutral-300">
+                            <span>Days: 0</span>
+                            <i data-lucide="flame" class="w-4 h-4 text-neutral-500"></i>
+                        </div>
+                        <p class="text-xs text-neutral-500 mb-5">Commitment Streak</p>
+
+                        <button
+                            class="bg-gradient-to-b from-orange-500 to-orange-700 text-white text-sm font-bold py-3 px-8 rounded-full shadow-lg hover:brightness-110 active:scale-95 transition-all w-[160px]">
+                            Mark As Done
+                        </button>
+                    </div>
+
+                    <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-90">
+                        <i data-lucide="flower" class="w-20 h-20 text-white"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br from-orange-900 to-neutral-900 rounded-xl p-5 relative shadow-lg border border-orange-900/50">
+                <div class="flex justify-between items-start">
+                    <div class="z-10 relative">
+                        <h2 class="text-xl font-bold mb-1">Gym</h2>
+
+                        <div class="flex items-center gap-1 mb-1 text-sm text-orange-200">
+                            <span>Days: 1</span>
+                            <i data-lucide="flame" class="w-4 h-4 text-orange-500 fill-orange-500"></i>
+                        </div>
+                        <p class="text-xs text-orange-300/60 mb-5">Growth Streak</p>
+
+                        <button
+                            class="bg-black/40 border border-orange-500/30 text-orange-100/70 text-sm font-semibold py-3 px-4 rounded-full w-[200px] flex items-center justify-center gap-2 cursor-default">
+                            <i data-lucide="check" class="w-4 h-4"></i>
+                            Done for today
+                        </button>
+                    </div>
+
+                    <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-90">
+                        <i data-lucide="dumbbell" class="w-20 h-20 text-white"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div
+            class="bg-neutral-900 border-t border-neutral-800 p-4 pb-8 flex justify-between items-center px-12 absolute bottom-0 w-full">
+            <button class="text-orange-500">
+                <i data-lucide="settings" class="w-6 h-6"></i>
+            </button>
+
+            <div class="bg-orange-500/20 p-2 rounded-xl">
+                <button class="bg-orange-500 text-black p-2 rounded-lg shadow-[0_0_15px_rgba(249,115,22,0.5)]">
+                    <i data-lucide="flame" class="w-6 h-6 fill-black"></i>
+                </button>
+            </div>
+
+            <button class="text-orange-500">
+                <i data-lucide="store" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

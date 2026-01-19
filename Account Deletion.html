@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Account Deletion - StreakUp</title>
+	<link rel="stylesheet" href="streakup-styles.css">
+	<style>
+		body {
+			background: #0a0a0a;
+			color: #e0e0e0;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			line-height: 1.6;
+			overflow-x: hidden;
+			padding-top: 80px;
+			margin: 0;
+		}
+
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 40px 20px;
+		}
+
+		header {
+			text-align: center;
+			margin-bottom: 60px;
+			padding: 40px 20px;
+			opacity: 0;
+			animation: fadeInUp 0.8s ease-out forwards;
+		}
+
+		.page-title {
+			font-size: 3rem;
+			font-weight: 700;
+			line-height: 1.2;
+			color: #ffffff;
+			margin-bottom: 20px;
+			background: linear-gradient(135deg, #ff7b00 0%, #ff9933 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		.page-description {
+			font-size: 1.2rem;
+			color: #b0b0b0;
+			max-width: 700px;
+			margin: 0 auto;
+			line-height: 1.7;
+		}
+
+		.page-body {
+			background: rgba(20, 20, 20, 0.6);
+			border: 2px solid #333;
+			border-radius: 20px;
+			padding: 40px;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+			backdrop-filter: blur(10px);
+			opacity: 0;
+			animation: fadeInUp 0.8s ease-out 0.3s forwards;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.page-body:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 25px 70px rgba(255, 123, 0, 0.15);
+		}
+
+		.page-body p {
+			font-size: 1.05rem;
+			color: #d0d0d0;
+			margin-bottom: 20px;
+			line-height: 1.8;
+		}
+
+		.page-body strong {
+			color: #ff7b00;
+			font-weight: 600;
+		}
+
+		.page-body ul,
+		.page-body ol {
+			margin: 25px 0;
+			padding-left: 25px;
+		}
+
+		.page-body li {
+			font-size: 1.05rem;
+			color: #d0d0d0;
+			margin-bottom: 15px;
+			line-height: 1.8;
+			position: relative;
+			padding-left: 10px;
+		}
+
+		.page-body ul li::marker {
+			color: #ff7b00;
+			font-size: 1.2em;
+		}
+
+		.page-body ol {
+			counter-reset: step-counter;
+			list-style: none;
+			padding-left: 0;
+		}
+
+		.page-body ol li {
+			counter-increment: step-counter;
+			padding-left: 50px;
+			position: relative;
+		}
+
+		.page-body ol li::before {
+			content: counter(step-counter);
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 32px;
+			height: 32px;
+			background: linear-gradient(135deg, rgba(255, 123, 0, 0.2), rgba(255, 153, 51, 0.2));
+			border: 2px solid #ff7b00;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 700;
+			color: #ff7b00;
+			font-size: 0.9rem;
+		}
+
+		.warning-box {
+			background: rgba(255, 123, 0, 0.1);
+			border: 2px solid rgba(255, 123, 0, 0.4);
+			border-radius: 15px;
+			padding: 25px;
+			margin: 30px 0;
+			opacity: 0;
+			animation: fadeInUp 0.8s ease-out 0.6s forwards;
+		}
+
+		.warning-box p {
+			margin: 8px 0;
+		}
+
+		.warning-icon {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			background: linear-gradient(135deg, #ff7b00, #ff9933);
+			border-radius: 50%;
+			text-align: center;
+			line-height: 24px;
+			margin-right: 8px;
+			font-weight: 700;
+			color: #0a0a0a;
+		}
+
+		.contact-section {
+			text-align: center;
+			margin-top: 50px;
+			padding: 30px;
+			background: rgba(255, 123, 0, 0.05);
+			border: 1px solid rgba(255, 123, 0, 0.2);
+			border-radius: 15px;
+			opacity: 0;
+			animation: fadeInUp 0.8s ease-out 0.9s forwards;
+		}
+
+		.contact-section p {
+			font-size: 1.1rem;
+			color: #e0e0e0;
+			margin: 10px 0;
+		}
+
+		.email-link {
+			color: #ff7b00;
+			text-decoration: none;
+			font-weight: 600;
+			transition: color 0.3s ease;
+		}
+
+		.email-link:hover {
+			color: #ff9933;
+			text-decoration: underline;
+		}
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@media (max-width: 768px) {
+			body {
+				padding-top: 60px;
+			}
+
+			.container {
+				padding: 20px 15px;
+			}
+
+			header {
+				margin-bottom: 30px;
+				padding: 20px 10px;
+			}
+
+			.page-title {
+				font-size: 2rem;
+				margin-bottom: 15px;
+			}
+
+			.page-description {
+				font-size: 1.05rem;
+				line-height: 1.6;
+			}
+
+			.page-body {
+				padding: 25px 20px;
+				border-radius: 15px;
+			}
+
+			.page-body p,
+			.page-body li {
+				font-size: 1rem;
+			}
+
+			.page-body ol li {
+				padding-left: 45px;
+			}
+
+			.page-body ol li::before {
+				width: 28px;
+				height: 28px;
+				font-size: 0.85rem;
+			}
+
+			.warning-box {
+				padding: 20px 15px;
+				border-radius: 12px;
+			}
+
+			.contact-section {
+				padding: 25px 20px;
+				margin-top: 35px;
+			}
+
+			.contact-section p {
+				font-size: 1rem;
+			}
+		}
+
+		@media (max-width: 480px) {
+			body {
+				padding-top: 60px;
+			}
+
+			.container {
+				padding: 15px 12px;
+			}
+
+			header {
+				margin-bottom: 20px;
+				padding: 15px 5px;
+			}
+
+			.page-title {
+				font-size: 1.65rem;
+				margin-bottom: 12px;
+			}
+
+			.page-description {
+				font-size: 0.95rem;
+				line-height: 1.5;
+			}
+
+			.page-body {
+				padding: 20px 15px;
+				border-radius: 12px;
+			}
+
+			.page-body p,
+			.page-body li {
+				font-size: 0.95rem;
+				line-height: 1.7;
+			}
+
+			.page-body ul,
+			.page-body ol {
+				padding-left: 15px;
+			}
+
+			.page-body ol li {
+				padding-left: 40px;
+				margin-bottom: 12px;
+			}
+
+			.page-body ol li::before {
+				width: 26px;
+				height: 26px;
+				font-size: 0.8rem;
+			}
+
+			.warning-box {
+				padding: 18px 12px;
+				border-radius: 10px;
+				margin: 25px 0;
+			}
+
+			.warning-box p {
+				font-size: 0.95rem;
+			}
+
+			.warning-icon {
+				width: 22px;
+				height: 22px;
+				line-height: 22px;
+				font-size: 0.9rem;
+			}
+
+			.contact-section {
+				padding: 20px 15px;
+				margin-top: 30px;
+				border-radius: 12px;
+			}
+
+			.contact-section p {
+				font-size: 0.95rem;
+			}
+		}
+
+		@media (max-width: 360px) {
+			.page-title {
+				font-size: 1.5rem;
+			}
+
+			.page-description {
+				font-size: 0.9rem;
+			}
+
+			.page-body p,
+			.page-body li {
+				font-size: 0.9rem;
+			}
+
+			.page-body ol li {
+				padding-left: 35px;
+			}
+
+			.page-body ol li::before {
+				width: 24px;
+				height: 24px;
+				font-size: 0.75rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="navigation-container"></div>
+	<div id="floating-bar-container"></div>
+
+	<div class="container">
+		<header>
+			<h1 class="page-title">Account Deletion</h1>
+			<p class="page-description">Learn how to delete your StreakUp account and permanently erase all your data.
+				Follow the steps carefully to ensure successful account removal.</p>
+		</header>
+
+		<section class="page-body">
+			<p>For the user to be able to delete all of their data inside the app, the user must meet the following
+				criteria:</p>
+			<ul>
+				<li>Be authenticated inside the app with the account on which the deletion is desired</li>
+				<li>Have an Internet connection</li>
+			</ul>
+
+			<p>If these criteria are met, follow these steps:</p>
+			<ol>
+				<li>Open the app</li>
+				<li>Log in with the account you wish to delete</li>
+				<li>Navigate to the <strong>"Settings"</strong> section using the bottom navigation bar</li>
+				<li>Press the "Profile" category</li>
+				<li>View your account information</li>
+				<li>Press on the "DELETE ACCOUNT" option</li>
+				<li>The user will be presented with a dialog which tells them that everything will be erased and
+					unrecoverable</li>
+				<li>Tap the "DELETE ACCOUNT" option</li>
+				<li>Confirm the deletion in the dialog warning that this action is permanent</li>
+				<li>Your data will be permanently erased from StreakUp's database</li>
+				<li>You will be logged out automatically</li>
+			</ol>
+
+			<div class="warning-box">
+				<p><span class="warning-icon">⚠</span><strong>Note:</strong> For security, we can only delete accounts
+					when we can verify ownership.</p>
+			</div>
+
+			<div class="contact-section">
+				<p>If you encounter any issues during the deletion process:</p>
+				<p>Contact us at <a href="mailto:streakup.app.official@gmail.com"
+						class="email-link">streakup.app.official@gmail.com</a></p>
+			</div>
+		</section>
+	</div>
+
+	<div id="footer-container"></div>
+	<script src="js/load-components.js" defer></script>
+	<script>
+		async function loadComponent(elementId, componentPath) {
+			try {
+				const response = await fetch(componentPath);
+				const html = await response.text();
+				document.getElementById(elementId).innerHTML = html;
+			} catch (error) {
+				console.error(`Error loading component ${componentPath}:`, error);
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', async () => {
+			await loadComponent('navigation-container', 'components/navigation.html');
+			await loadComponent('floating-bar-container', 'components/floating-bar.html');
+			await loadComponent('footer-container', 'components/footer.html');
+		});
+	</script>
+</body>
+
+</html>

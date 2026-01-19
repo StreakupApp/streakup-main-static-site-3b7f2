@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreakUp - Build Habits That Last</title>
+    <link rel="stylesheet" href="streakup-styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            justify-content: space-around;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .hero-left {
+            flex: 0 0 auto;
+        }
+
+        .hero-right {
+            flex: 0 0 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .phone-mockup {
+            max-width: 250px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-card {
+            border-left: none;
+            /* remove that tiny line */
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5em;
+            color: #fff;
+            /* text color */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .info-card p {
+            color: #d0d0d0;
+            line-height: 1.5;
+            margin: 4px 0;
+        }
+
+
+        .card-orange {
+            background-color: hsla(29, 100%, 40%, 0.8);
+        }
+
+        .card-red {
+            background-color: hsla(354, 70%, 54%, 0.8);
+        }
+
+        .card-purple {
+            background-color: hsl(279, 33%, 56%, 0.8);
+        }
+
+        .info-card h3,
+        .info-card p {
+            color: #ffffff;
+            /* make sure text is readable */
+        }
+
+        .play-badge {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .play-badge img {
+            width: 200px;
+        }
+
+        .cta-box {
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+            border: 2px solid #333;
+        }
+
+        .cta-box h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            color: #b0b0b0;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff7b00;
+            color: #ffffff;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #ff9933;
+        }
+
+        .section {
+            margin: 0px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .feature-row {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin: 60px 0;
+            justify-content: center;
+        }
+
+        .feature-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature-image {
+            flex: 0 0 auto;
+        }
+
+        .feature-image img {
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-text {
+            flex: 0 0 500px;
+        }
+
+        .feature-text h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .feature-text p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .divider {
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 80px 0;
+        }
+
+        .mini-divider {
+            height: 1px;
+
+            margin: 5px 0;
+        }
+
+
+
+        @media (max-width: 500px) {
+
+            .hero-section,
+            .feature-row {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-row.reverse {
+                flex-direction: column;
+            }
+
+            .hero-right,
+            .feature-text {
+                flex: 1 1 100%;
+                max-width: 600px;
+            }
+        }
+
+        .phone-mockup {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            height: auto;
+            transition: max-width 0.3s ease;
+        }
+
+        /* Tablet and smaller laptops */
+        @media (max-width: 1024px) {
+            .phone-mockup {
+                max-width: 300px;
+            }
+        }
+
+        /* Mid-sized phones and small tablets */
+        @media (max-width: 768px) {
+            .phone-mockup {
+                max-width: 220px;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 500px) {
+            .phone-mockup {
+                max-width: 180px;
+            }
+        }
+
+        /* Ultra-small screens (like older iPhones) */
+        @media (max-width: 360px) {
+            .phone-mockup {
+                max-width: 150px;
+            }
+        }
+
+
+
+        .top-padding-link {
+            padding-top: 30px;
+
+            display: inline-block;
+
+        }
+
+        .responsive-image-container {
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .responsive-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            height: auto;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Optional polish: subtle zoom effect on hover (for desktop) */
+        @media (hover: hover) {
+            .responsive-image:hover {
+                transform: scale(1.03);
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+            .responsive-image {
+                max-width: 90%;
+                border-radius: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .responsive-image {
+                max-width: 95%;
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <nav class="nav-menu" id="navMenu">
+        <div class="nav-menu-header">
+            <h2>Menu</h2>
+            <button class="nav-menu-close" id="menuClose">×</button>
+        </div>
+        <div class="nav-menu-links">
+            <a href="index.html">Home</a>
+            <a href="Feature%20Request%20for%20Streakup.html">Request a Feature</a>
+            <a href="Account%20Deletion.html">Account Deletion</a>
+            <a href="Report%20a%20Problem.html">Report a Problem</a>
+            <a href="Privacy%20Policy.html">Privacy Policy</a>
+            <a href="Terms%20Of%20Service.html">Terms Of Service</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <a href="index.html" class="floating-top-bar">
+        <img src="assets/icon.png" alt="StreakUp Icon" class="floating-icon">
+        <span class="floating-title">StreakUp</span>
+    </a>
+
+
+    <div class="container">
+
+
+
+        <section class="hero-section">
+
+            <img src="assets/screens/notes_view.png" alt="StreakUp App" class="phone-mockup">
+            <div class="mini-divider">
+
+            </div>
+
+            <div class="hero-right">
+                <div class="info-card card-orange" style="display:flex; align-items:flex-start; gap:0.5em;">
+                    <div style="flex-shrink:0; width:1.5em; height:1.5em;">
+                        <img src="assets/question.svg" alt="Cloud Sync" style="width:100%; height:100%;" />
+                    </div>
+                    <div style="display:flex; flex-direction: column; gap:0.25em;">
+                        <h3>What is StreakUp?</h3>
+                        <p><strong>StreakUp</strong> is a habit tracker built to keep you consistent, not just for a
+                            week,
+                            but for the long haul. Smooth animations, a polished interface, and smart streak logic keep
+                            you
+                            motivated and on track, making building productive habits feel effortless.</p>
+                    </div>
+                </div>
+
+                <div class="info-card card-red" style="display:flex; align-items:flex-start; gap:0.5em;">
+                    <!-- Icon -->
+                    <div style="flex-shrink:0; width:1.5em; height:1.5em;">
+                        <img src="assets/book.svg" alt="Cloud Sync" style="width:100%; height:100%;" />
+                    </div>
+
+                    <!-- Content column -->
+                    <div style="display:flex; flex-direction: column; gap:0.25em;">
+                        <h3 style="margin:0;">Status: Released!</h3>
+                        <p>After 1+ years, StreakUp is now <em><strong>available for Android</strong></em>,
+                            Go start creating new and powerful routines!</p>
+
+                    </div>
+                </div>
+
+                <div class="info-card card-purple" style="display:flex; align-items:flex-start; gap:0.5em;">
+                    <!-- SVG icon -->
+                    <div style="flex-shrink:0; width:1.5em; height:1.5em; ">
+                        <img src="assets/cloud.svg" alt="Cloud Sync" style="width:100%; height:100%; color:#ff0000;" />
+                    </div>
+                    <div>
+                        <h3 style="margin:0;">Cloud Sync</h3>
+                        <p>No matter the tier, we offer all of our users with Cloud Sync, so that they can access
+                            StreakUp
+                            from any other mobile device and prevent losing data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <header>
+            <p class="page-title">Start sticking to your goals</p>
+            <div class="mini-divider"></div>
+            <p class="page-subtitle">It's not about being perfect, but being consistent.
+                Create habits that fit you, note your progress, and let StreakUp remind you why you started. Watch your
+                streaks grow and celebrate your progress every day. Start today and turn consistency into your
+                superpower!</p>
+
+            <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup" target="_blank"
+                class="top-padding-link">
+                <img src="assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="min-width:350px;">
+            </a>
+        </header>
+
+        <!-- <div class="cta-box">
+            <h2>Request access for StreakUp by filling out this contact form</h2>
+            <p>Please allow a few days for a response to your email after submission.</p>
+            <a href="https://tally.so/r/npEorP" target="_blank" class="cta-button">🚀 Request Beta Access</a>
+        </div> -->
+
+        <div class="divider"></div>
+
+        <section class="section">
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="assets/screens/edit_streak.png" alt="Create custom streaks">
+                </div>
+                <div class="feature-text">
+                    <h2>Create and customize your streak to your liking</h2>
+                    <p>Give it a name, a description, an Icon from our selection and you can start right away!</p>
+                    <p>You can also set up exactly which days the streak is active on!</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+            <div class="feature-row reverse">
+                <div class="feature-image">
+                    <img src="assets/screens/friend_streak.png" alt="Friend streaks">
+                </div>
+                <div class="feature-text">
+                    <h2>Make a streak with your favorite duo!</h2>
+                    <p>StreakUp offers a "friend streak" for premium users so that you can create and continue your
+                        habit with a friend!</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+            <h2 class="section-title">Keep track of your streak with the Home Widget!</h2>
+            <p style="text-align: center; color: #d0d0d0; max-width: 700px; margin: 0 auto 40px;">Add a widget to your
+                phone's home screen to stay on top of your habits or activities. The widget syncs seamlessly with your
+                app's theme and status, so it always looks just right!</p>
+            <div class="responsive-image-container">
+                <img src="assets/screens/home_widget.png" alt="Home widget" class="responsive-image">
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+            <h2 class="section-title">Supports 5+ languages like English, French, Spanish and more!</h2>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+            <div class="feature-row">
+                <div class="feature-text">
+                    <h2>Personalize with Themes!</h2>
+                    <p>With Premium, you can make your tracking more enjoyable with your favorite color!</p>
+                </div>
+                <div class="feature-image">
+                    <img src="assets/screens/Themes_showcase.HRC.png" alt="Custom themes">
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section>
+            <h2 class="section-title">Building with your feedback</h2>
+            <p style="text-align: center; color: #d0d0d0; max-width: 700px; margin: 0 auto;">Help in the development of
+                StreakUp by giving feature, design, new language support ideas,</p>
+            <p style="text-align: center; color: #d0d0d0; max-width: 700px; margin: 0 auto 0px;"><strong>Let's make it
+                    happen, together!</strong></p>
+
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-title">Pages</h3>
+            <div class="footer-links">
+                <a href="Feature%20Request%20for%20Streakup.html">Request a Feature</a>
+                <a href="Account%20Deletion.html">Account Deletion</a>
+                <a href="Report%20a%20Problem.html">Report a Problem</a>
+                <a href="Privacy%20Policy.html">Privacy Policy</a>
+                <a href="Terms%20Of%20Service.html">Terms Of Service</a>
+                <a href="Contact.html">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                by © Kirner Mark Adrian 2025
+            </div>
+        </div>
+    </footer>
+    <script src="menu.js" defer></script>
+</body>
+
+</html>

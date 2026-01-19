@@ -1,0 +1,198 @@
+<style>
+    /* Menu Toggle Button */
+    .menu-toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(30, 30, 30, 0.95);
+        border: 2px solid #333;
+        border-radius: 8px;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .menu-toggle:hover {
+        background: rgba(40, 40, 40, 0.95);
+        border-color: #ff7b00;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #ff5e00;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Navigation Overlay */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Navigation Menu */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -320px;
+        width: 300px;
+        height: 100%;
+        background: rgba(20, 20, 20, 0.98);
+        backdrop-filter: blur(10px);
+        border-right: 2px solid #333;
+        z-index: 999;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 20px;
+        border-bottom: 2px solid #333;
+        margin-left: 60px;
+    }
+
+    .nav-menu-header h2 {
+        color: #ff8800;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .nav-menu-close {
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu-close:hover {
+        background: rgba(255, 123, 0, 0.2);
+        color: #ff7b00;
+    }
+
+    .nav-menu-links {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .nav-menu-links a {
+        color: #d0d0d0;
+        text-decoration: none;
+        padding: 15px 20px;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+        border-left: 3px solid transparent;
+    }
+
+    .nav-menu-links a:hover {
+        color: #ffffff;
+        background: rgba(255, 123, 0, 0.1);
+        border-left-color: #ff7b00;
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            top: 15px;
+            left: 15px;
+        }
+    }
+</style>
+
+<button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav class="nav-menu" id="navMenu">
+    <div class="nav-menu-header">
+        <h2>Menu</h2>
+        <button class="nav-menu-close" id="menuClose">×</button>
+    </div>
+
+    <div class="nav-menu-links">
+        <a href="index.html">Home</a>
+        <a href="Feature%20Request%20for%20Streakup.html">Request a Feature</a>
+        <a href="Account%20Deletion.html">Account Deletion</a>
+        <a href="Report%20a%20Problem.html">Report a Problem</a>
+        <a href="Privacy%20Policy.html">Privacy Policy</a>
+        <a href="Terms%20Of%20Service.html">Terms Of Service</a>
+        <a href="Contact.html">Contact</a>
+    </div>
+</nav>
+
+<script>
+    // Menu functionality
+    (function () {
+        // Wait for DOM to be ready
+        function initMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const menuClose = document.getElementById('menuClose');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+
+            if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
+                setTimeout(initMenu, 100);
+                return;
+            }
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+                navOverlay.classList.add('active');
+            });
+
+            menuClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+
+            navOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMenu);
+        } else {
+            initMenu();
+        }
+    })();
+</script>

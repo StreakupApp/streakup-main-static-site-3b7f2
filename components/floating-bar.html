@@ -1,0 +1,65 @@
+<style>
+    .floating-top-bar {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 900;
+        background: rgba(30, 30, 30, 0.95);
+        backdrop-filter: blur(10px);
+        border: 2px solid #333;
+        border-radius: 12px;
+        padding: 10px 25px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .floating-top-bar:hover {
+        background: rgba(40, 40, 40, 0.95);
+        border-color: #ff7b00;
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .floating-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .floating-top-bar:hover .floating-icon {
+        transform: rotate(360deg);
+    }
+
+    .floating-title {
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .floating-top-bar {
+            top: 15px;
+            padding: 8px 18px;
+            right: 15px;
+        }
+
+        .floating-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+        .floating-title {
+            font-size: 1.05rem;
+        }
+    }
+</style>
+
+<a href="index.html" class="floating-top-bar">
+    <img src="assets/icon.png" alt="StreakUp Icon" class="floating-icon">
+    <span class="floating-title">StreakUp</span>
+</a>
