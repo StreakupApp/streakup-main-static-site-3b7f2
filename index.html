@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StreakUp - Build Habits That Last</title>
@@ -20,13 +21,23 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/website/apple-touch-icon.png">
     <link rel="manifest" href="/assets/icons/website/site.webmanifest">
     <link rel="shortcut icon" href="/assets/icons/website/favicon.ico">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        @font-face {
+            font-family: 'Roboto';
+            src: url('./assets/fonts/Roboto-Bold.ttf') format('truetype');
+            font-weight: bold;
+        }
+        @font-face {
+            font-family: 'Sharp-Sans';
+            src: url('./assets/fonts/Sharp Sans Extrabold.otf') format('truetype');
+            font-weight: bold;
+        }
         body {
             background: #0a0a0a;
             color: #e0e0e0;
@@ -58,6 +69,7 @@
         }
 
         .page-title {
+            font-family: "Sharp-Sans", sans-serif;
             font-size: 3.5rem;
             font-weight: 700;
             line-height: 1.3;
@@ -71,6 +83,7 @@
         }
 
         .page-subtitle {
+            font-family: "Roboto";
             font-size: 1.4rem;
             color: #b0b0b0;
             font-weight: 400;
@@ -808,6 +821,7 @@
             }
         }
     </style>
+    <script src="/components/analytics.js"></script>
 </head>
 
 <body>
