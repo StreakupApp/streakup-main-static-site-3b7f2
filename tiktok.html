@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="/components/analytics.js"></script>
+    <script>
+        posthog.capture('social_visit', { source: 'tiktok' });
+        setTimeout(() => {
+            window.location.href = '/';
+        }, 300);
+    </script>
+</head>
+
+</html>
