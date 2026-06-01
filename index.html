@@ -991,8 +991,20 @@
         document.addEventListener('DOMContentLoaded', () => {
             const animateElements = document.querySelectorAll('.scroll-animate');
             animateElements.forEach(el => observer.observe(el));
+
+            // ADD THIS inside here:
+            const playBadge = document.querySelector('.play-badge');
+            if (playBadge) {
+                playBadge.addEventListener('click', () => {
+                    posthog.capture('play_store_badge_clicked', {
+                        location: 'hero_section'
+            });
         });
+            }
+        });  // <-- closing brace of DOMContentLoaded
+
     </script>
+    
 </body>
 
 </html>
