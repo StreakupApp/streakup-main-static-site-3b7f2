@@ -11,3 +11,19 @@ if (!window.location.host.includes('127.0.0.1') && !window.location.host.include
         enable_heatmaps: true,
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const utm_source = params.get('utm_source');
+    const utm_medium = params.get('utm_medium');
+    const utm_campaign = params.get('utm_campaign');
+
+    if (utm_source) {
+        posthog.capture('utm_visit', {
+            utm_source,
+            utm_medium,
+            utm_campaign,
+            page: window.location.pathname
+        });
+    }
+});
