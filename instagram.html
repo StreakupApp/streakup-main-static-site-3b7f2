@@ -4,7 +4,7 @@
 <head>
     <script src="/components/analytics.js"></script>
     <script>
-        posthog.capture('social_visit', { source: 'instagram' });
+            posthog.capture('social_visit', { utm_source: 'instagram' });
         setTimeout(() => {
             window.location.href = '/';
         }, 300);

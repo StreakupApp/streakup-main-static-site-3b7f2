@@ -4,7 +4,7 @@
 <head>
     <script src="/components/analytics.js"></script>
     <script>
-        posthog.capture('social_visit', { source: 'Twitter' });
+            posthog.capture('social_visit', { utm_source: 'Twitter' });
         setTimeout(() => {
             window.location.href = '/';
         }, 300);

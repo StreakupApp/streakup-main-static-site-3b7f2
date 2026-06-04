@@ -4,7 +4,7 @@
 <head>
     <script src="/components/analytics.js"></script>
     <script>
-        posthog.capture('social_visit', { source: 'tiktok' });
+            posthog.capture('social_visit', { utm_source: 'tiktok' });
         setTimeout(() => {
             window.location.href = '/';
         }, 300);
