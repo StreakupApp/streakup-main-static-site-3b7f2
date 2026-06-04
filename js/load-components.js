@@ -10,12 +10,12 @@ async function loadComponent(elementId, componentPath) {
 
 // Load all components when DOM is ready
 document.addEventListener('DOMContentLoaded', async () => {
-    await loadComponent('navigation-container', 'components/navigation.html');
-    await loadComponent('floating-bar-container', 'components/floating-bar.html');
-    await loadComponent('footer-container', 'components/footer.html');
+    await loadComponent('navigation-container', '/components/navigation.html');
+    await loadComponent('floating-bar-container', '/components/floating-bar.html');
+    await loadComponent('footer-container', '/components/footer.html');
 
     // Initialize menu after navigation is loaded
     const menuScript = document.createElement('script');
-    menuScript.src = 'js/menu.js';
+    menuScript.src = '/js/menu.js';
     document.body.appendChild(menuScript);
 });

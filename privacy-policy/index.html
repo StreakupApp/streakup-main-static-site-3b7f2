@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/website/favicon-32x32.png">
@@ -11,6 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Privacy Policy - StreakUp</title>
 	<link rel="stylesheet" href="streakup-styles.css">
+	<link rel="canonical" href="https://streakup.pro/privacy-policy/" />
 	<style>
 		body {
 			background: #0a0a0a;
@@ -821,7 +822,7 @@
 		</main>
 	</div>
 	<div id="footer-container"></div>
-	<script src="js/load-components.js" defer></script>
+	<script src="/js/load-components.js" defer></script>
 	<script>
 		async function loadComponent(elementId, componentPath) {
 			try {
@@ -834,9 +835,9 @@
 		}
 
 		document.addEventListener('DOMContentLoaded', async () => {
-			await loadComponent('navigation-container', 'components/navigation.html');
-			await loadComponent('floating-bar-container', 'components/floating-bar.html');
-			await loadComponent('footer-container', 'components/footer.html');
+			await loadComponent('navigation-container', '/components/navigation.html');
+			await loadComponent('floating-bar-container', '/components/floating-bar.html');
+			await loadComponent('footer-container', '/components/footer.html');
 		});
 	</script>
 </body>
