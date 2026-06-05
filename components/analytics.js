@@ -17,12 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const utm_source = params.get('utm_source');
     const utm_medium = params.get('utm_medium');
     const utm_campaign = params.get('utm_campaign');
+    const ref = params.get('ref');
 
-    if (utm_source) {
-        posthog.capture('utm_visit', {
-            utm_source,
+    if (utm_source || ref) {
+        posthog.capture('website_utm_visit', {
+            utm_source: utm_source || ref,
             utm_medium,
             utm_campaign,
+            ref,
             page: window.location.pathname
         });
     }
