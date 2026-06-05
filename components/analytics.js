@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ref = params.get('ref');
 
     if (utm_source || ref) {
-        posthog.capture('website_utm_visit', {
+        posthog.capture('utm_visit', {
             utm_source: utm_source || ref,
             utm_medium,
             utm_campaign,
