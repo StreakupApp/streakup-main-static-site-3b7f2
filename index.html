@@ -819,6 +819,61 @@
                 font-size: 0.88rem;
             }
         }
+        /* Featured On */
+/* Featured On */
+.featured-on-section {
+    text-align: center;
+}
+
+.badges-carousel {
+    position: relative;
+    max-width: 700px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 24px 0;
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.featured-on-section.animate .badges-carousel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.badges-track {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: max-content;
+}
+
+
+.badge-link {
+    flex-shrink: 0;
+    opacity: 0.65;
+    transition: opacity 0.3s ease;
+}
+
+.badge-link:hover {
+    opacity: 1;
+}
+
+.badge-link img {
+    display: block;
+    height: 48px;
+    width: auto;
+}
+
+@keyframes scrollBadges {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
     </style>
     <script src="/components/analytics.js"></script>
 </head>
@@ -962,10 +1017,32 @@
             happen, together!</p>
     </section>
 
-    <a href="https://auraplusplus.com/projects/streakup" target="_blank" rel="noopener">
-        <img src="https://auraplusplus.com/images/badges/featured-on-dark.svg" alt="Featured on Aura++" width="265"
-            height="58" />
-    </a>
+    <div class="divider scroll-animate"></div>
+    
+    
+    
+    <section class="section featured-on-section scroll-animate">
+        <h2 class="section-title scroll-animate">Featured On</h2>
+        <div class="badges-carousel">
+            <div class="badges-track" id="badgesTrack">
+                <a href="https://auraplusplus.com/projects/streakup" target="_blank" rel="noopener noreferrer"
+                    class="badge-link">
+                    <img src="https://auraplusplus.com/images/badges/featured-on-dark.svg" alt="Featured on Aura++"
+                        height="48" />
+                </a>
+                <a href="https://pitchwall.co/product/streakup?utm_source=badge" target="_blank" rel="noopener noreferrer"
+                    class="badge-link">
+                    <img src="https://pitchwall.co/images/featured/pitchwall-light.png" alt="Featured on PitchWall"
+                        height="48" />
+                </a>
+            <a href="https://www.producthunt.com/products/streakup-2?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-streakup-2"
+                target="_blank" rel="noopener noreferrer"><img
+                    alt="StreakUp - Premium habit tracking. Build real consistency &amp; foundation. | Product Hunt" width="250"
+                    height="54"
+                    src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1164189&amp;theme=dark&amp;t=1781381339256"></a>
+            </div>
+            </div>
+            </section>
     </div>
 
 
@@ -996,15 +1073,40 @@
             const animateElements = document.querySelectorAll('.scroll-animate');
             animateElements.forEach(el => observer.observe(el));
 
-            // ADD THIS inside here:
+
+
             const playBadge = document.querySelector('.play-badge');
             if (playBadge) {
                 playBadge.addEventListener('click', () => {
                     posthog.capture('play_store_badge_clicked', {
                         location: 'hero_section'
-            });
-        });
+                    });
+                });
             }
+
+            // Auto-clone badges for seamless loop
+            const track = document.getElementById('badgesTrack');
+            if (track) {
+                const clone = track.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+
+                const wrapper = document.createElement('div');
+                wrapper.style.cssText = 'display:flex; width:max-content;';
+                wrapper.appendChild(track.cloneNode(true));
+                wrapper.appendChild(clone);
+
+                const carousel = track.parentElement;
+                carousel.innerHTML = '';
+                carousel.appendChild(wrapper);
+                wrapper.style.cssText = 'display:flex; width:max-content; gap:50px;';
+                wrapper.style.animation = 'scrollBadges 12s linear infinite';
+
+
+                carousel.addEventListener('mouseenter', () => wrapper.style.animationPlayState = 'paused');
+                carousel.addEventListener('mouseleave', () => wrapper.style.animationPlayState = 'running');
+            }
+
+
         });  // <-- closing brace of DOMContentLoaded
 
     </script>
