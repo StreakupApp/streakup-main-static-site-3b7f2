@@ -8,12 +8,14 @@
     font-family: 'Roboto';
     src: url('./assets/fonts/Roboto-Bold.ttf') format('truetype');
     font-weight: bold;
+    font-display: swap
 }
 
 @font-face {
     font-family: 'Sharp-Sans';
     src: url('./assets/fonts/Sharp Sans Extrabold.otf') format('truetype');
     font-weight: bold;
+        font-display: swap
 }
 
 body {
@@ -1075,24 +1077,6 @@ img {
     white-space: pre-wrap;
     word-break: break-word;
 }
-
-/* 
-@font-face {
-    font-family: 'sharp-sans-extrabold';
-    src: url('assets/fonts/Sharp%20Sans%20Extrabold.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'sharp-sans-medium';
-    src: url('assets/fonts/Sharp%20Sans%20Medium.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-
-} */
 
 
 
