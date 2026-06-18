@@ -12,274 +12,90 @@
 	<title>Contact - StreakUp</title>
 	<link rel="stylesheet" href="streakup-styles.css">
 	<link rel="canonical" href="https://streakup.pro/contact/" />
-	<style>
-		body {
-			background: #0a0a0a;
-			color: #e0e0e0;
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-			line-height: 1.6;
-			overflow-x: hidden;
-			padding-top: 80px;
-			margin: 0;
-		}
-
-		.top-header {
-			text-align: center;
-			padding: 40px 20px;
-			margin-bottom: 40px;
-		}
-
-		.page-title {
-			font-size: 3rem;
-			font-weight: 700;
-			line-height: 1.2;
-			color: #ffffff;
-			margin: 0;
-			background: linear-gradient(135deg, #ff7b00 0%, #ff9933 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-		}
-
-		.container {
-			max-width: 900px;
-			margin: 0 auto;
-			padding: 0 20px 60px;
-		}
-
-		.page-content {
-			background: rgba(20, 20, 20, 0.6);
-			border: 1px solid #2a2a2a;
-			border-radius: 12px;
-			padding: 50px;
-			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-		}
-
-		.page-body h1 {
-			font-size: 2.2rem;
-			color: #ffffff;
-			margin-bottom: 30px;
-			font-weight: 700;
-		}
-
-		.highlight-orange {
-			background: linear-gradient(135deg, #ff7b00 0%, #ff9933 100%);
-			color: #ffffff;
-			padding: 0.15em 0.5em;
-			border-radius: 6px;
-		}
-
-		.intro-section {
-			display: flex;
-			gap: 40px;
-			align-items: flex-start;
-			margin: 40px 0;
-			flex-wrap: wrap;
-		}
-
-		.profile-image {
-			flex-shrink: 0;
-		}
-
-		.profile-image img {
-			width: 250px;
-			height: 250px;
-			border-radius: 12px;
-			object-fit: cover;
-			box-shadow: 0 8px 24px rgba(255, 123, 0, 0.3);
-			border: 2px solid #ff7b00;
-		}
-
-		.intro-text {
-			flex: 1;
-			min-width: 280px;
-		}
-
-		.intro-text p {
-			font-size: 1.1rem;
-			color: #d0d0d0;
-			line-height: 1.8;
-		}
-
-		.page-body h2 {
-			font-size: 1.8rem;
-			color: #ffffff;
-			margin-top: 50px;
-			margin-bottom: 25px;
-			font-weight: 700;
-			border-bottom: 2px solid #ff7b00;
-			padding-bottom: 10px;
-		}
-
-		.contact-info {
-			background: rgba(255, 123, 0, 0.1);
-			padding: 30px;
-			border-radius: 12px;
-			margin: 30px 0;
-			border-left: 4px solid #ff7b00;
-		}
-
-		.contact-info p {
-			margin: 15px 0;
-			font-size: 1.05rem;
-			color: #d0d0d0;
-			line-height: 1.8;
-		}
-
-		.contact-info p strong {
-			color: #ff7b00;
-			margin-right: 10px;
-			font-weight: 600;
-		}
-
-		.contact-info a {
-			color: #ff7b00;
-			text-decoration: none;
-			transition: color 0.2s ease;
-		}
-
-		.contact-info a:hover {
-			color: #ff9933;
-			text-decoration: underline;
-		}
-
-		@media (max-width: 768px) {
-			body {
-				padding-top: 60px;
-			}
-
-			.container {
-				padding: 0 15px 40px;
-			}
-
-			.top-header {
-				padding: 25px 15px;
-				margin-bottom: 25px;
-			}
-
-			.page-title {
-				font-size: 2rem;
-			}
-
-			.page-content {
-				padding: 30px 25px;
-				border-radius: 10px;
-			}
-
-			.page-body h1 {
-				font-size: 1.8rem;
-				margin-bottom: 25px;
-			}
-
-			.intro-section {
-				gap: 30px;
-				margin: 30px 0;
-			}
-
-			.profile-image img {
-				width: 200px;
-				height: 200px;
-			}
-
-			.intro-text p {
-				font-size: 1rem;
-			}
-
-			.page-body h2 {
-				font-size: 1.5rem;
-				margin-top: 35px;
-				margin-bottom: 20px;
-			}
-
-			.contact-info {
-				padding: 25px 20px;
-				border-radius: 10px;
-			}
-
-			.contact-info p {
-				font-size: 1rem;
-			}
-		}
-
-		@media (max-width: 480px) {
-			body {
-				padding-top: 60px;
-			}
-
-			.container {
-				padding: 0 12px 30px;
-			}
-
-			.top-header {
-				padding: 20px 10px;
-				margin-bottom: 20px;
-			}
-
-			.page-title {
-				font-size: 1.7rem;
-			}
-
-			.page-content {
-				padding: 25px 18px;
-				border-radius: 8px;
-			}
-
-			.page-body h1 {
-				font-size: 1.5rem;
-				margin-bottom: 20px;
-			}
-
-			.intro-section {
-				gap: 25px;
-				margin: 25px 0;
-				flex-direction: column;
-				align-items: center;
-			}
-
-			.profile-image {
-				width: 100%;
-				text-align: center;
-			}
-
-			.profile-image img {
-				width: 180px;
-				height: 180px;
-				border-radius: 10px;
-			}
-
-			.intro-text {
-				min-width: 100%;
-			}
-
-			.intro-text p {
-				font-size: 0.95rem;
-				line-height: 1.7;
-			}
-
-			.page-body h2 {
-				font-size: 1.3rem;
-				margin-top: 30px;
-				margin-bottom: 15px;
-			}
-
-			.contact-info {
-				padding: 20px 15px;
-				border-radius: 8px;
-			}
-
-			.contact-info p {
-				font-size: 0.95rem;
-				margin: 12px 0;
-				line-height: 1.7;
-			}
-		}
-	</style>
+	<link rel="stylesheet" href="streakup-styles.css">
 	<script src="/components/analytics.js"></script>
-</head>
+	<link rel="stylesheet" href="/css/navigation.css">
+	<link rel="stylesheet" href="/css/footer.css">
+	<link rel="stylesheet" href="/css/floating-bar.css">
+	</head>
+	
+	<body>
+		<div id="navigation-container"><!-- COMPONENT:navigation -->
 
-<body>
-	<div id="navigation-container"></div>
-	<div id="floating-bar-container"></div>
+
+<button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav class="nav-menu" id="navMenu">
+    <div class="nav-menu-header">
+        <h2>Menu</h2>
+        <button class="nav-menu-close" id="menuClose">×</button>
+    </div>
+
+    <div class="nav-menu-links">
+        <a href="/">Home</a>
+        <a href="/feature-request">Request a Feature</a>
+        <a href="/account-deletion">Account Deletion</a>
+        <a href="/report-a-problem">Report a Problem</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms Of Service</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<script>
+    // Menu functionality
+    (function () {
+        // Wait for DOM to be ready
+        function initMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const menuClose = document.getElementById('menuClose');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+
+            if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
+                setTimeout(initMenu, 100);
+                return;
+            }
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+                navOverlay.classList.add('active');
+            });
+
+            menuClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+
+            navOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMenu);
+        } else {
+            initMenu();
+        }
+    })();
+</script>
+<!-- /COMPONENT:navigation --></div>
+	<div id="floating-bar-container"><!-- COMPONENT:floating-bar -->
+
+
+<a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakup_website&utm_medium=referral&utm_campaign=launch"
+    target="_blank" rel="noopener noreferrer" class="floating-top-bar">
+    <img src="/assets/icon.png" alt="StreakUp Icon" class="floating-icon">
+    <span class="floating-title">StreakUp</span>
+</a>
+<!-- /COMPONENT:floating-bar --></div>
 
 	<header class="top-header">
 		<h1 class="page-title">Contact</h1>
@@ -321,24 +137,7 @@
 	</div>
 
 	<div id="footer-container"></div>
-	<script src="/js/load-components.js" defer></script>
-	<script>
-		async function loadComponent(elementId, componentPath) {
-			try {
-				const response = await fetch(componentPath);
-				const html = await response.text();
-				document.getElementById(elementId).innerHTML = html;
-			} catch (error) {
-				console.error(`Error loading component ${componentPath}:`, error);
-			}
-		}
-
-		document.addEventListener('DOMContentLoaded', async () => {
-			await loadComponent('navigation-container', '/components/navigation.html');
-			await loadComponent('floating-bar-container', '/components/floating-bar.html');
-			await loadComponent('footer-container', '/components/footer.html');
-		});
-	</script>
+	>
 </body>
 
 </html>

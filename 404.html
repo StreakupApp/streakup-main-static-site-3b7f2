@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found | StreakUp</title>
     <link rel="stylesheet" href="streakup-styles.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/floating-bar.css">
     <style>
         body {
             background: #0a0a0a;
@@ -294,8 +297,84 @@
 </head>
 
 <body>
-    <div id="navigation-container"></div>
-    <div id="floating-bar-container"></div>
+    <div id="navigation-container"><!-- COMPONENT:navigation -->
+
+
+<button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav class="nav-menu" id="navMenu">
+    <div class="nav-menu-header">
+        <h2>Menu</h2>
+        <button class="nav-menu-close" id="menuClose">×</button>
+    </div>
+
+    <div class="nav-menu-links">
+        <a href="/">Home</a>
+        <a href="/feature-request">Request a Feature</a>
+        <a href="/account-deletion">Account Deletion</a>
+        <a href="/report-a-problem">Report a Problem</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms Of Service</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<script>
+    // Menu functionality
+    (function () {
+        // Wait for DOM to be ready
+        function initMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const menuClose = document.getElementById('menuClose');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+
+            if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
+                setTimeout(initMenu, 100);
+                return;
+            }
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+                navOverlay.classList.add('active');
+            });
+
+            menuClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+
+            navOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMenu);
+        } else {
+            initMenu();
+        }
+    })();
+</script>
+<!-- /COMPONENT:navigation -->
+    </div>
+    <div id="floating-bar-container"><!-- COMPONENT:floating-bar -->
+
+
+<a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakup_website&utm_medium=referral&utm_campaign=launch"
+    target="_blank" rel="noopener noreferrer" class="floating-top-bar">
+    <img src="/assets/icon.png" alt="StreakUp Icon" class="floating-icon">
+    <span class="floating-title">StreakUp</span>
+</a>
+<!-- /COMPONENT:floating-bar -->
+    </div>
 
     <div class="container">
         <div class="error-content">
@@ -344,7 +423,27 @@
         </div>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container"><!-- COMPONENT:footer -->
+
+
+<footer>
+    <div class="footer-content">
+        <h3 class="footer-title">Pages</h3>
+        <div class="footer-links">
+            <a href="/feature-request">Request a Feature</a>
+            <a href="/account-deletion">Account Deletion</a>
+            <a href="/report-a-problem">Report a Problem</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-service">Terms Of Service</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <div class="footer-bottom">
+            by © Kirner Mark Adrian 2025
+        </div>
+    </div>
+</footer>
+<!-- /COMPONENT:footer -->
+    </div>
 
     <script>
         async function loadComponent(elementId, componentPath) {
