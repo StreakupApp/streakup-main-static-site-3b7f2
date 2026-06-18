@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreakUp - Build and Achieve</title>
-    <meta property="og:title" content="StreakUp - Build Habits That Last" />
+    <title>StreakUp - Build & Achieve</title>
+    <meta property="og:title" content="StreakUp - Build & Achieve" />
     <meta property="og:description"
         content="Start achieving today! It's not about being perfect, but being consistent. Turn consistency into your superpower!" />
     <meta name="description"
@@ -24,271 +24,85 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/floating-bar.css">
     <link rel="stylesheet" href="/streakup-styles.css">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StreakUp - Build & Achieve">
+    <meta name="twitter:description"
+        content="Start achieving today! It's not about being perfect, but being consistent. Turn consistency into your superpower!">
     
     <script src="/components/analytics.js"></script>
     </head>
 
 <body>
     <div id="navigation-container"><!-- COMPONENT:navigation -->
-        <style>
-            /* Menu Toggle Button */
-            .menu-toggle {
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                background: rgba(30, 30, 30, 0.95);
-                border: 2px solid #333;
-                border-radius: 8px;
-                padding: 10px;
-                cursor: pointer;
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                transition: all 0.3s ease;
-                z-index: 1000;
-            }
-    
-            .menu-toggle:hover {
-                background: rgba(40, 40, 40, 0.95);
-                border-color: #ff7b00;
-            }
-    
-            .menu-toggle span {
-                width: 25px;
-                height: 3px;
-                background: #ff5e00;
-                border-radius: 2px;
-                transition: all 0.3s ease;
-            }
-    
-            /* Navigation Overlay */
-            .nav-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.7);
-                z-index: 998;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-    
-            .nav-overlay.active {
-                opacity: 1;
-                visibility: visible;
-            }
-    
-            /* Navigation Menu */
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                left: -320px;
-                width: 300px;
-                height: 100%;
-                background: rgba(20, 20, 20, 0.98);
-                backdrop-filter: blur(10px);
-                border-right: 2px solid #333;
-                z-index: 999;
-                transition: left 0.3s ease;
-                overflow-y: auto;
-                box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
-            }
-    
-            .nav-menu.active {
-                left: 0;
-            }
-    
-            .nav-menu-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 25px 20px;
-                border-bottom: 2px solid #333;
-                margin-left: 60px;
-            }
-    
-            .nav-menu-header h2 {
-                color: #ff8800;
-                font-size: 1.5rem;
-                font-weight: 600;
-            }
-    
-            .nav-menu-close {
-                background: none;
-                border: none;
-                color: #ffffff;
-                font-size: 2rem;
-                cursor: pointer;
-                padding: 0;
-                width: 35px;
-                height: 35px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 6px;
-                transition: all 0.3s ease;
-            }
-    
-            .nav-menu-close:hover {
-                background: rgba(255, 123, 0, 0.2);
-                color: #ff7b00;
-            }
-    
-            .nav-menu-links {
-                display: flex;
-                flex-direction: column;
-                padding: 10px 0;
-            }
-    
-            .nav-menu-links a {
-                color: #d0d0d0;
-                text-decoration: none;
-                padding: 15px 20px;
-                font-size: 1.05rem;
-                transition: all 0.3s ease;
-                border-left: 3px solid transparent;
-            }
-    
-            .nav-menu-links a:hover {
-                color: #ffffff;
-                background: rgba(255, 123, 0, 0.1);
-                border-left-color: #ff7b00;
-            }
-    
-            @media (max-width: 768px) {
-                .menu-toggle {
-                    top: 15px;
-                    left: 15px;
-                }
-            }
-        </style>
-    
-        <button class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="nav-overlay" id="navOverlay"></div>
-        <nav class="nav-menu" id="navMenu">
-            <div class="nav-menu-header">
-                <h2>Menu</h2>
-                <button class="nav-menu-close" id="menuClose">×</button>
-            </div>
-    
-            <div class="nav-menu-links">
-                <a href="/">Home</a>
-                <a href="/feature-request">Request a Feature</a>
-                <a href="/account-deletion">Account Deletion</a>
-                <a href="/report-a-problem">Report a Problem</a>
-                <a href="/privacy-policy">Privacy Policy</a>
-                <a href="/terms-of-service">Terms Of Service</a>
-                <a href="/contact">Contact</a>
-            </div>
-            </nav>
-    
-        <script>
-            // Menu functionality
-            (function () {
-                // Wait for DOM to be ready
-                function initMenu() {
-                    const menuToggle = document.getElementById('menuToggle');
-                    const menuClose = document.getElementById('menuClose');
-                    const navMenu = document.getElementById('navMenu');
-                    const navOverlay = document.getElementById('navOverlay');
 
-                    if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
-                        setTimeout(initMenu, 100);
-                        return;
-                    }
 
-                    menuToggle.addEventListener('click', () => {
-                        navMenu.classList.add('active');
-                        navOverlay.classList.add('active');
-                    });
+<button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
-                    menuClose.addEventListener('click', () => {
-                        navMenu.classList.remove('active');
-                        navOverlay.classList.remove('active');
-                    });
+<div class="nav-overlay" id="navOverlay"></div>
 
-                    navOverlay.addEventListener('click', () => {
-                        navMenu.classList.remove('active');
-                        navOverlay.classList.remove('active');
-                    });
-                }
+<nav class="nav-menu" id="navMenu">
+    <div class="nav-menu-header">
+        <h2>Menu</h2>
+        <button class="nav-menu-close" id="menuClose">×</button>
+    </div>
 
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', initMenu);
-                } else {
-                    initMenu();
-                }
-                })();
-            </script>
-        <!-- /COMPONENT:navigation -->
+    <div class="nav-menu-links">
+        <a href="/">Home</a>
+        <a href="/feature-request">Request a Feature</a>
+        <a href="/account-deletion">Account Deletion</a>
+        <a href="/report-a-problem">Report a Problem</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms Of Service</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<script>
+    // Menu functionality
+    (function () {
+        // Wait for DOM to be ready
+        function initMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const menuClose = document.getElementById('menuClose');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+
+            if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
+                setTimeout(initMenu, 100);
+                return;
+            }
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+                navOverlay.classList.add('active');
+            });
+
+            menuClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+
+            navOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMenu);
+        } else {
+            initMenu();
+        }
+    })();
+</script>
+<!-- /COMPONENT:navigation -->
         </div>
         <div id="floating-bar-container"><!-- COMPONENT:floating-bar -->
-            <style>
-                .floating-top-bar {
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    z-index: 900;
-                    background: rgba(30, 30, 30, 0.95);
-                    backdrop-filter: blur(10px);
-                    border: 2px solid #333;
-                    border-radius: 12px;
-                    padding: 10px 25px;
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    text-decoration: none;
-                    transition: all 0.3s ease;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            }
-    
-            .floating-top-bar:hover {
-                background: rgba(40, 40, 40, 0.95);
-                border-color: #ff7b00;
-                transform: translateY(-2px);
-                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-            }
-    
-            .floating-icon {
-                width: 32px;
-                height: 32px;
-                border-radius: 8px;
-                transition: transform 0.3s ease;
-            }
-    
-            .floating-top-bar:hover .floating-icon {
-                transform: rotate(360deg);
-            }
-    
-            .floating-title {
-                color: #ffffff;
-                font-size: 1.2rem;
-                font-weight: 600;
-            }
-    
-            @media (max-width: 768px) {
-                .floating-top-bar {
-                    top: 15px;
-                    padding: 8px 18px;
-                    right: 15px;
-                }
-    
-                .floating-icon {
-                    width: 28px;
-                    height: 28px;
-                }
-    
-                .floating-title {
-                    font-size: 1.05rem;
-                }
-            }
-        </style>
+
 
 <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakup_website&utm_medium=referral&utm_campaign=launch"
     target="_blank" rel="noopener noreferrer" class="floating-top-bar">
@@ -506,80 +320,7 @@
 
 
     <div id="footer-container"><!-- COMPONENT:footer -->
-        <style>
-            footer {
-                background: rgba(20, 20, 20, 0.95);
-                border-top: 2px solid #ff5e00;
-                margin-top: 80px;
-                padding: 40px 0 20px;
-            }
-    
-            .footer-content {
-                max-width: 1400px;
-                margin: 0 auto;
-                padding: 0 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-    
-            }
-    
-            .footer-title {
-                color: #ffffff;
-                font-size: 1.5rem;
-                margin-bottom: 20px;
-                text-align: center;
-                font-weight: 600;
-            }
-    
-            .footer-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px 30px;
-                margin-bottom: 30px;
-            }
-    
-            .footer-links a {
-                color: #b0b0b0;
-                text-decoration: none;
-                transition: color 0.3s ease;
-                font-size: 1rem;
-            }
-    
-            .footer-links a:hover {
-                color: #ff7b00;
-            }
-    
-            .footer-bottom {
-                text-align: center;
-                color: #808080;
-                font-size: 0.95rem;
-                padding-top: 20px;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-            }
-    
-            .footer-bottom {
-                text-align: center;
-                color: #808080;
-                font-size: 0.95rem;
-                padding-top: 20px;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                width: 100%;
-    
-            }
-    
-            @media (max-width: 768px) {
-                footer {
-                    margin-top: 60px;
-                }
-    
-                .footer-links {
-                    flex-direction: column;
-                    gap: 15px;
-                }
-            }
-        </style>
+
 
 <footer>
     <div class="footer-content">
