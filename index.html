@@ -29,7 +29,28 @@
     <meta name="twitter:description"
         content="StreakUp is a habit & streak tracker that helps you build consistency one day at a time. Track daily habits, set milestones, and turn small wins into lasting routines.">
     <meta property="og:type" content="website">
-    <script src="/components/analytics.js"></script>
+    <script src="/components/analytics.js" defer></script>
+    <script type="application/ld+json">
+                                                        {
+                                                          "@context": "https://schema.org",
+                                                          "@type": "SoftwareApplication",
+                                                          "name": "StreakUp - Build & Achieve",
+                                                          "operatingSystem": "ANDROID",
+                                                          "applicationCategory": "HealthApplication",
+                                                          "offers": {
+                                                            "@type": "Offer",
+                                                            "price": "0",
+                                                            "priceCurrency": "USD"
+                                                          },
+                                                          "aggregateRating": {
+                                                             "@type": "AggregateRating",
+                                                             "ratingValue": "3.7",
+                                                            "ratingCount": "3"
+                                                         },
+                                                          "url": "https://streakup.pro/"
+                                                          
+                                                        }
+                                                        </script>
 </head>
 
 <body>
@@ -114,9 +135,10 @@
     <div class="container">
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="page-title">Start sticking to your goals</h1>
-                <p class="page-subtitle">It's not about being perfect, but being consistent. Turn consistency into your
-                    superpower!</p>
+            <h1 class="page-title">Start Sticking to Your Goals</h1>
+            <h2 class="hero-keyword-line">StreakUp - Habit & Streak Tracker for Building Daily Consistency</h2>
+            <p class="page-subtitle">It's not about being perfect, but being consistent. Turn consistency into your
+                superpower!</p>
                 <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakup_website&utm_medium=referral&utm_campaign=launch"
                     target="_blank" rel="noopener noreferrer" class="play-badge"
                     aria-label="Get StreakUp on Google Play">
@@ -149,7 +171,7 @@
 
         <section class="info-section">
             <div class="info-item scroll-animate">
-                <h3>What is StreakUp?</h3>
+                <h2>What is StreakUp?</h2>
                 <p><strong>StreakUp</strong> is a habit tracker built to keep you consistent, not just for a week, but
                     for the long run. Smooth animations, a polished interface, and smart streak logic keep you
                     motivated and on track, making building productive habits easy.</p>
@@ -401,7 +423,7 @@
         });  // <-- closing brace of DOMContentLoaded
 
     </script>
-    
+
 </body>
 
 </html>

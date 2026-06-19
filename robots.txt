@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /app-ads.txt
+Disallow:
 
 Sitemap: https://streakup.pro/sitemap.xml
