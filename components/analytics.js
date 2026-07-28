@@ -2,7 +2,7 @@
 
 if (!window.location.host.includes('127.0.0.1') && !window.location.host.includes('localhost')) {
     posthog.init('phc_kLfHKBYafqk6DSMXuzBSsD7GudfK3uGsSsukKYDqyrJf', {
-        api_host: 'https://t.streakup.pro',
+        api_host: 'https://t.streakrise.com',
         ui_host: 'https://eu.posthog.com',
         defaults: '2026-01-30',
         person_profiles: 'identified_only',

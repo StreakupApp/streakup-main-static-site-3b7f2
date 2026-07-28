@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://streakup.pro/sitemap.xml
+Sitemap: https://streakrise.com/sitemap.xml
