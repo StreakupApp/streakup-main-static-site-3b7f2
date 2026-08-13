@@ -30,5 +30,5 @@ jobs:
                 \"https://streakrise.com/report-a-problem/\",
                 \"https://streakrise.com/account-deletion/\"
               ]
-            }"
+            }" \
             -w "\nHTTP status: %{http_code}\n"
