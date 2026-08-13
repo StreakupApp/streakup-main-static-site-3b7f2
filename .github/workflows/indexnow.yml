@@ -1,0 +1,33 @@
+name: IndexNow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Submit updated URLs to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{
+              \"host\": \"streakrise.com\",
+              \"key\": \"${INDEXNOW_KEY}\",
+              \"keyLocation\": \"https://streakrise.com/${INDEXNOW_KEY}.txt\",
+              \"urlList\": [
+                \"https://streakrise.com/\",
+                \"https://streakrise.com/privacy-policy/\",
+                \"https://streakrise.com/terms-of-service/\",
+                \"https://streakrise.com/contact/\",
+                \"https://streakrise.com/feature-request/\",
+                \"https://streakrise.com/report-a-problem/\",
+                \"https://streakrise.com/account-deletion/\"
+              ]
+            }"
