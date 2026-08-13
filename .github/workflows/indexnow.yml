@@ -15,7 +15,7 @@ jobs:
         env:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: |
-          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+          curl -fsS -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json; charset=utf-8" \
             -d "{
               \"host\": \"streakrise.com\",
@@ -31,3 +31,4 @@ jobs:
                 \"https://streakrise.com/account-deletion/\"
               ]
             }"
+            -w "\nHTTP status: %{http_code}\n"
