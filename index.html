@@ -46,6 +46,7 @@
         <link rel="stylesheet" href="/css/floating-bar.css">
         <link rel="stylesheet" href="/streakrise-styles.css">
     <script src="/components/analytics.js" defer></script>
+    <script src="/js/scroll_effect.js" defer></script>
     <script type="application/ld+json">
                                                         {
                                                           "@context": "https://schema.org",
@@ -104,10 +105,10 @@
     <div class="nav-menu-links">
         <a href="/">Home</a>
         <a href="/feature-request/">Request a Feature</a>
-        <a href="/account-deletion/">Account Deletion</a>
         <a href="/report-a-problem/">Report a Problem</a>
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms-of-service/">Terms Of Service</a>
+        <a href="/account-deletion/">Account Deletion</a>
         <a href="/contact/">Contact</a>
     </div>
 </nav>
@@ -164,138 +165,131 @@
 
     <div class="container">
         <section class="hero-section">
-            <div class="hero-content">
-            <h1 class="page-title">Start Sticking to Your Goals</h1>
-            <h2 class="hero-keyword-line">StreakRise: Habit & Streak Tracker for Building Daily Consistency</h2>
-            <p class="page-subtitle">It's not about being perfect, but being consistent. Turn consistency into your
-                superpower!</p>
-                <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
-                    target="_blank" rel="noopener noreferrer" class="play-badge"
-                    aria-label="Get StreakRise on Google Play">
-                    <img src="/assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" fetchpriority=high>
-                </a>
-            </div>
-            <div class="hero-image">
-                <img src="/assets/screens/first_photo.webp" alt="StreakRise App" class="phone-mockup" fetchpriority="high">
-            </div>
-        </section>
+    <div class="hero-content">
+    <h1 class="page-title">Your time to truly <span class="highlight-orange">shine</span> has arrived.</h1>
+    <h2 class="hero-keyword-line">StreakRise: Habit & Streak Tracker for Building Daily Consistency</h2>
+    <p class="page-subtitle">The habit tracker app that truly cares about your success and improvement.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
+        target="_blank" rel="noopener noreferrer" class="play-badge" aria-label="Get StreakRise on Google Play">
+        <img src="/assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" fetchpriority=high>
+    </a>
+    </div>
+    <div class="hero-image">
+        <img src="/assets/screens/first_photo.webp" alt="StreakRise App" class="phone-mockup" fetchpriority="high">
+    </div>
+    </section>
 
-        <div class="quick-features-container scroll-animate">
-            <div class="feature-box">
-                <img src="/assets/notification.svg" class="feature-box-icon" alt="Notifications">
-                <span class="feature-box-title">Notifications</span>
-            </div>
-            <div class="feature-box">
-                <img src="/assets/social.svg" class="feature-box-icon" alt="Friend Streaks">
-                <span class="feature-box-title">Friend Streaks</span>
-            </div>
-            <div class="feature-box">
-                <img src="/assets/analytics.svg" class="feature-box-icon" alt="Analytics">
-                <span class="feature-box-title">Analytics</span>
-            </div>
-            <div class="feature-box">
-                <img src="/assets/home_widget.svg" class="feature-box-icon" alt="Home Widget">
-                <span class="feature-box-title">Home Widget</span>
-            </div>
+<div class="quick-features-container scroll-animate">
+    <div class="feature-box">
+        <img src="/assets/notification.svg" class="feature-box-icon" alt="Notifications">
+        <span class="feature-box-title">Notifications</span>
+    </div>
+    <div class="feature-box">
+        <img src="/assets/social.svg" class="feature-box-icon" alt="Friend Streaks">
+        <span class="feature-box-title">Friend Streaks</span>
+    </div>
+    <div class="feature-box">
+        <img src="/assets/analytics.svg" class="feature-box-icon" alt="Analytics">
+        <span class="feature-box-title">Analytics</span>
+    </div>
+    <div class="feature-box">
+        <img src="/assets/home_widget.svg" class="feature-box-icon" alt="Home Widget">
+        <span class="feature-box-title">Home Widget</span>
+    </div>
+</div>
+
+<section class="info-section">
+    <div class="info-item scroll-animate">
+        <h2>What is StreakRise?</h2>
+        <p><strong>StreakRise</strong> keeps you consistent not for a week, but for the long run. Smooth animations, a
+            polished interface, and smart streak logic make building real habits effortless.</p>
         </div>
-
-        <section class="info-section">
-            <div class="info-item scroll-animate">
-                <h2>What is StreakRise?</h2>
-                <p><strong>StreakRise</strong> is a habit tracker built to keep you consistent, not just for a week, but
-                    for the long run. Smooth animations, a polished interface, and smart streak logic keep you
-                    motivated and on track, making building productive habits easy.</p>
-            </div>
         </section>
 
-        <div class="divider scroll-animate"></div>
+<div class="divider scroll-animate"></div>
 
-        <section class="section">
-            <div class="feature-row scroll-animate">
-                <div class="feature-image">
-                    <img src="/assets/screens/edit_streak.webp" alt="Create custom streaks" loading="lazy">
-                </div>
-                <div class="feature-text">
-                    <h2>Create and customize your streak to your liking</h2>
-                    <p>Give it a name, a description, an Icon from our selection and you can start right away!</p>
-                    <p>You can also set up exactly which days the streak is active on!</p>
-                </div>
+<!-- FORMAT 1: Classic side-by-side (baseline layout) -->
+<section class="section">
+    <div class="feature-row scroll-animate">
+        <div class="feature-image">
+            <img src="/assets/screens/edit_streak.webp" alt="Create custom streaks" loading="lazy">
+        </div>
+        <div class="feature-text">
+            <h2>Your streak, your rules</h2>
+            <p>Name it, describe it, pick an icon and go. Set exactly which days it's active, down to the day of the week.</p>
             </div>
+            </div>
+            </section>
+
+<div class="divider scroll-animate"></div>
+
+<!-- FORMAT 2: Overlapping duo card with floating badge -->
+<section class="section duo-section">
+    <div class="duo-showcase scroll-animate">
+        <div class="duo-text">
+            <h2>Build it together</h2>
+            <p>With Premium, team up on a streak with a friend and keep each other accountable.</p>
+        </div>
+        <div class="duo-image-stack">
+            <div class="duo-image-shadow" aria-hidden="true"></div>
+            <img src="/assets/screens/friend_streak.webp" alt="Friend streaks" loading="lazy" class="duo-image">
+            <span class="duo-badge">✦ Premium</span>
+        </div>
+        </div>
         </section>
 
-        <div class="divider scroll-animate"></div>
+<div class="divider scroll-animate"></div>
 
-        <section class="section">
-            <div class="feature-row reverse scroll-animate">
-                <div class="feature-image">
-                    <img src="/assets/screens/friend_streak.webp" alt="Friend streaks" loading="lazy">
-                </div>
-                <div class="feature-text">
-                    <h2>Make a streak with your favorite duo!</h2>
-                    <p>StreakRise offers a "friend streak" for premium users so that you can create and continue your
-                        habit with a friend!</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider scroll-animate"></div>
-
-        <section class="section">
-            <h2 class="section-title scroll-animate">Keep track of your streak with the Home Widget!</h2>
-            <p class="section-description scroll-animate">Add a widget to your phone's home screen to stay on top of
-                your habits or
-                activities. The widget syncs seamlessly with your app's theme and status, so it always looks just right!
-            </p>
-            <div class="responsive-image-container scroll-animate">
+<!-- FORMAT 3: Widget spotlight (centered image + glow) -->
+<section class="section widget-showcase">
+    <h2 class="section-title scroll-animate">Right on your home screen</h2>
+    <p class="section-description scroll-animate">Add the widget and never lose track. It syncs with your app's theme
+        and status, so it always looks right.</p>
+    <div class="responsive-image-container scroll-animate">
                 <img src="/assets/screens/home_widget.webp" alt="Home widget" class="responsive-image" loading="lazy">
             </div>
+</section>
+
+<div class="divider scroll-animate"></div>
+
+<!-- FORMAT 4: Big stat number callout -->
+<section class="section stat-showcase scroll-animate">
+    <div class="stat-panel">
+        <div class="stat-number-block">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Languages supported</span>
+            <p class="stat-desc">More languages keep landing — use the full app in yours.</p>
+        </div>
+        <div class="stat-image-wrap">
+            <img src="/assets/screens/languages.webp" alt="Languages" class="stat-image" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<div class="divider scroll-animate"></div>
+
+<!-- FORMAT 5: Mosaic with floating color swatches -->
+<section class="section mosaic-showcase">
+    <h2 class="section-title scroll-animate">Make it yours</h2>
+    <p class="section-description scroll-animate">With Premium, pick a theme that actually feels like you.</p>
+    <div class="mosaic-panel scroll-animate">
+        <img src="/assets/screens/Themes_showcase.webp" alt="Custom themes" class="mosaic-image" loading="lazy">
+        <span class="swatch swatch-1" style="background:#ff7b00;"></span>
+        <span class="swatch swatch-2" style="background:#8b5cf6;"></span>
+        <span class="swatch swatch-3" style="background:#22c55e;"></span>
+        <span class="swatch swatch-4" style="background:#ec4899;"></span>
+    </div>
+</section>
+
+<div class="divider scroll-animate"></div>
+
+<section class="section">
+    <h2 class="section-title scroll-animate">Built on your feedback</h2>
+    <p class="section-description scroll-animate">Got an idea for a feature, a design tweak, or a new language? Send it in,
+        every idea gets a real response.</p>
+    <p class="section-description scroll-animate" style="margin-top: 10px; color: #ffffff; font-weight: 600;">
+        Let's build it together.</p>
         </section>
-
-        <div class="divider scroll-animate"></div>
-
-        <section class="section">
-
-            <h2 class="section-title scroll-animate">Language support</h2>
-            <p class="section-description scroll-animate">
-                More and more languages are being added, enjoy the full app in your language!
-            </p>
-
-
-            <div class="responsive-image-container scroll-animate">
-                <img src="/assets/screens/languages.webp" alt="Languages"
-                    class="responsive-image languages" loading="lazy">
-            </div>
-    </div>
-    </section>
-
-        <div class="divider scroll-animate"></div>
-
-        <section class="section">
-
-            <h2 class="section-title scroll-animate">Personalize with Themes!</h2>
-            <p class="section-description scroll-animate">With Premium, you can make your tracking more enjoyable
-                with your favorite color!
-            </p>
-
-
-            <div class="responsive-image-container scroll-animate">
-                <img src="/assets/screens/Themes_showcase.webp" alt="Custom themes"
-                    class="responsive-image themes-large" loading="lazy">
-            </div>
-    </div>
-    </section>
-
-    <div class="divider scroll-animate"></div>
-
-    <section class="section">
-        <h2 class="section-title scroll-animate">Building with your feedback</h2>
-        <p class="section-description scroll-animate">Help in the development of StreakRise by giving feature, design,
-            new language
-            support ideas.</p>
-        <p class="section-description scroll-animate" style="margin-top: 10px; color: #ffffff; font-weight: 600;">
-            Let's make it
-            happen, together!</p>
-    </section>
 
     <div class="divider scroll-animate"></div>
     

@@ -1,11 +1,32 @@
+:root {
+    --bg-parallax-y: 0px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-color: #ff7b1a;
+    -webkit-mask-image: url('/assets/patterns/seamless_background.svg');
+    mask-image: url('/assets/patterns/seamless_background.svg');
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-size: 200px 200px;
+    mask-size: 200px 200px;
+    -webkit-mask-position: 0 var(--bg-parallax-y);
+    mask-position: 0 var(--bg-parallax-y);
+    opacity: 0.05;
+    pointer-events: none;
+    will-change: mask-position;
+}
 body {
-    background: #0a0a0a;
+    background: #080808;
     color: #e0e0e0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    padding-top: 80px;
-    margin: 0;
+    padding-top: 20px;
 }
 
 .container {
