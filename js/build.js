@@ -7,6 +7,7 @@ const COMPONENTS_DIR = path.join(ROOT, 'components');
 // Every page file, relative to ROOT
 const pageFiles = [
     'index.html',
+    "style2/index.html",
     'account-deletion/index.html',
     'contact/index.html',
     'feature-request/index.html',

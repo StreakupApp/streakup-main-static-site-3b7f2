@@ -7,15 +7,20 @@
     backdrop-filter: blur(10px);
     border: 2px solid #333;
     border-radius: 12px;
-    padding: 10px 25px;
+    padding: 8px 8px 8px 12px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     text-decoration: none;
+    color: #fff;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+.floating-top-bar:visited {
+    color: #fff;
+}
 .floating-top-bar:hover {
     background: rgba(40, 40, 40, 0.95);
     border-color: #ff7b00;
@@ -23,6 +28,12 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
+.floating-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 .floating-icon {
     width: 32px;
     height: 32px;
@@ -35,24 +46,76 @@
 }
 
 .floating-title {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
+.floating-cta,
+.floating-top-bar:visited .floating-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #f4f4f4;
+    color: #111;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.floating-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.floating-top-bar:hover .floating-cta {
+    background: #ff7b00;
+    color: #fff;
+}
+
+.floating-top-bar:hover .floating-arrow {
+    transform: translateX(4px);
+}
 @media (max-width: 768px) {
     .floating-top-bar {
-        top: 15px;
-        padding: 8px 18px;
-        right: 15px;
+        top: 12px;
+            left: 78px;
+            right: 12px;
+            height: 48px;
+            box-sizing: border-box;
+            padding: 0 6px 0 10px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
     }
 
     .floating-icon {
-        width: 28px;
-        height: 28px;
-    }
-
-    .floating-title {
-        font-size: 1.05rem;
-    }
+        width: 30px;
+            height: 30px;
+        }
+        
+        .floating-title {
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        
+        .floating-cta {
+            height: 34px;
+            padding: 0 12px;
+            font-size: 0.9rem;
+            flex: 0 0 auto;
+        }
+                .hero-section {
+                    padding-top: 0;
+                }
+                }
+        
+                @media (max-width: 360px) {
+                    .floating-title {
+                        display: none;
+                        }
 }
