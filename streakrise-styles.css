@@ -1536,4 +1536,4 @@ body {
     .info-item p {
         font-size: 0.88rem;
     }
-}
+}.phone-mockup, .feature-image img { height: auto; }
