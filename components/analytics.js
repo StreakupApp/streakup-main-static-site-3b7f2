@@ -28,4 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
             page: window.location.pathname
         });
     }
+
+    // Capture domain redirect info (streakup_pro migration tracking)
+    const redirectFrom = params.get('redirect_from');
+    if (redirectFrom) {
+        posthog.capture('domain_redirect', {
+            redirect_from: redirectFrom,
+            utm_source: utm_source || ref,
+            utm_medium,
+            utm_campaign,
+            ref,
+            page: window.location.pathname
+        });
+    }
 });
