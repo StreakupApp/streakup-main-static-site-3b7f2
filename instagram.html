@@ -5,9 +5,15 @@
     <meta name="robots" content="noindex">
     <script src="/components/analytics.js"></script>
     <script>
-            posthog.capture('social_visit', { utm_source: 'instagram' });
+        posthog.capture('social_visit', { utm_source: 'instagram' });
+
+        const redirectUrl = new URL('/', window.location.origin);
+        redirectUrl.searchParams.set('utm_source', 'instagram');
+        redirectUrl.searchParams.set('utm_medium', 'social');
+        redirectUrl.searchParams.set('utm_campaign', 'instagram_bio');
+
         setTimeout(() => {
-            window.location.href = '/';
+            window.location.href = redirectUrl.toString();
         }, 300);
     </script>
 </head>

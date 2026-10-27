@@ -654,6 +654,23 @@
             const vidObserver = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(() => { }) : e.target.pause()), { threshold: 0.4 });
             document.querySelectorAll('video[data-lazy]').forEach(v => vidObserver.observe(v));
 
+            // Dynamic Google Play UTM rewrite — inherit source from URL params
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmSource = urlParams.get('utm_source');
+            const utmMedium = urlParams.get('utm_medium');
+            const utmCampaign = urlParams.get('utm_campaign');
+
+            if (utmSource) {
+                document.querySelectorAll('.play-badge, .floating-top-bar').forEach(link => {
+                    const href = new URL(link.href);
+                    href.searchParams.set('utm_source', utmSource);
+                    if (utmMedium) href.searchParams.set('utm_medium', utmMedium);
+                    if (utmCampaign) href.searchParams.set('utm_campaign', utmCampaign);
+                    href.searchParams.set('utm_content', 'streakrise_website');
+                    link.href = href.toString();
+                });
+            }
+
             // Play badge tracking (hero + final CTA)
             document.querySelectorAll('.play-badge').forEach(badge => {
                 badge.addEventListener('click', () => {
