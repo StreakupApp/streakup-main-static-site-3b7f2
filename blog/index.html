@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog and Topics: Streak Philosophy, Habits & Productivity</title>
+    <link rel="icon" href="/assets/icons/website/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/website/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/website/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/website/apple-touch-icon.png">
+    <meta property="og:site_name" content="StreakRise">
+
+    <meta name="description"
+        content="Explore the science of streaks, habit formation, and productivity. Learn why streaks work, how to build consistency, and get the most out of StreakRise.">
+    <link rel="canonical" href="https://streakrise.com/blog/">
+
+    <!-- Open Graph -->
+   <meta property="og:title" content="Blog and Topics | StreakRise">
+    <meta property="og:description"
+        content="Explore the science of streaks, habit formation, and productivity. Learn why streaks work, how to build consistency, and get the most out of StreakRise.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://streakrise.com/blog/">
+    <meta property="og:image" content="https://streakrise.com/blog/assets/blog/og-blog-index.jpg">
+    <meta property="og:image:secure_url" content="https://streakrise.com/blog/assets/blog/og-blog-index.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Blog and Topics: Streak Philosophy and Habit Formation Articles">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog and Topics: Streak Philosophy, Habits & Productivity">
+    <meta name="twitter:description"
+        content="Explore the science of streaks, habit formation, and productivity. Learn why streaks work, how to build consistency, and get the most out of StreakRise.">
+    <meta name="twitter:image" content="https://streakrise.com/assets/blog/og-blog-index.jpg">
+    <meta name="twitter:image:alt" content="Blog and Topics: Streak Philosophy and Habit Formation Articles">
+
+    <link rel="manifest" href="/assets/icons/website/site.webmanifest">
+    <link rel="shortcut icon" href="/assets/icons/website/favicon.ico">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/floating-bar.css">
+    <link rel="stylesheet" href="../streakrise-styles.css?v=7">
+     <link rel="stylesheet" href="../css/blog.css">
+    <script src="/components/analytics.js" defer></script>
+    <script src="/js/scroll_effect.js" defer></script>
+
+       <!-- LD:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "StreakRise Blog",
+  "description": "Articles about streak philosophy, habit formation, and productivity from the creator of StreakRise",
+  "url": "https://streakrise.com/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "StreakRise",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://streakrise.com/assets/icon.png"
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Mark Kirner"
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Are streaks meant to be broken?",
+      "description": "Streaks push us forward, but when the goal becomes the streak, we lose our freedom of choice. Here is why forgiveness matters.",
+      "url": "https://streakrise.com/blog/are-streaks-meant-to-be-broken/",
+      "datePublished": "2026-10-29T10:00:00+00:00",
+      "dateModified": "2026-10-29T10:00:00+00:00",
+      "author": {
+        "@type": "Person",
+        "name": "Mark Kirner"
+      },
+      "image": "https://streakrise.com/assets/blog/are-streaks-meant-to-be-broken/og.jpg"
+    }
+  ]
+}
+</script>
+<!-- LD:END -->
+</head>
+
+
+<body>
+    <div id="navigation-container"><!-- COMPONENT:navigation -->
+
+
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<nav class="nav-menu" id="navMenu">
+    <div class="nav-menu-header">
+        <h2>Menu</h2>
+        <button class="nav-menu-close" id="menuClose">×</button>
+    </div>
+
+    <div class="nav-menu-links">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog & Topics</a>
+        <a href="/feature-request/">Request a Feature</a>
+        <a href="/report-a-problem/">Report a Problem</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms Of Service</a>
+        <a href="/account-deletion/">Account Deletion</a>
+        <a href="/contact/">Contact</a>
+    </div>
+</nav>
+
+<script>
+    // Menu functionality
+    (function () {
+        // Wait for DOM to be ready
+        function initMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const menuClose = document.getElementById('menuClose');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+
+            if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
+                setTimeout(initMenu, 100);
+                return;
+            }
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+                navOverlay.classList.add('active');
+            });
+
+            menuClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+
+            navOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMenu);
+        } else {
+            initMenu();
+        }
+    })();
+</script>
+<!-- /COMPONENT:navigation -->
+        </div>
+        <div id="floating-bar-container"><!-- COMPONENT:floating-bar -->
+<a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
+    target="_blank" rel="noopener noreferrer" class="floating-top-bar">
+    <span class="floating-brand">
+        <img src="/assets/icon.png" alt="StreakRise Icon" class="floating-icon">
+        <span class="floating-title">StreakRise</span>
+    </span>
+    <span class="floating-cta">Get The App
+        <svg class="floating-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+    </span>
+</a>
+<!-- /COMPONENT:floating-bar -->
+</div>
+
+    <main>
+        <!-- Blog Hero -->
+        <section class="blog-hero scroll-animate">
+            <h1 class="blog-hero-title">Blog and Topics</h1>
+            <p class="blog-hero-description">Explore the science of streaks, habit formation, and productivity. Written by Mark, the indie developer behind StreakRise.</p>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="blog-grid" id="blogGrid">
+    <!-- POSTS:START -->
+    <article class="blog-card scroll-animate">
+        <img
+            src="/blog/assets/are-streaks-meant-to-be-broken/cover.jpg"
+            alt="Are streaks meant to be broken?"
+            class="blog-card-image"
+            loading="lazy">
+
+        <div class="blog-card-content">
+            <div class="blog-card-meta">
+                <span class="blog-card-category">Streak Philosophy</span>
+                <time class="blog-card-date" datetime="2026-10-29">October 29, 2026</time>
+            </div>
+
+            <h2 class="blog-card-title">Are streaks meant to be broken?</h2>
+            <p class="blog-card-excerpt">Streaks push us forward, but when the goal becomes the streak, we lose our freedom of choice. Here is why forgiveness matters.</p>
+
+            <div class="blog-card-footer">
+                <span class="blog-card-read-time">6 min read</span>
+                <a href="/blog/are-streaks-meant-to-be-broken/" class="blog-card-link">Read more →</a>
+            </div>
+        </div>
+    </article>
+    <!-- POSTS:END -->
+</section>
+
+
+        <!-- Newsletter / App CTA -->
+        <section class="section blog-post-cta scroll-animate" style="max-width: 800px; margin: 60px auto 0; padding: 20px 20px;">
+            <h2 class="blog-post-cta-title">Ready to build your own streaks?</h2>
+            <p class="blog-post-cta-text">Put these insights into practice with StreakRise, the habit tracker that adapts to you, not the other way around.</p>
+            <div class="badge-row" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:stretch;gap:12px;">
+    
+    <!-- QR Button (on the left) -->
+    <button type="button" class="qr-btn" id="qrOpen" aria-label="Show QR code">
+        <img src="/assets/icons/simple/qr-code.svg" alt="" width="28" height="28" aria-hidden="true">
+    </button>
+
+    <!-- Google Play Button (on the right) -->
+    <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
+        target="_blank" rel="noopener noreferrer" class="play-badge"
+        aria-label="Get StreakRise on Google Play">
+        <img src="/assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" fetchpriority="high">
+    </a>
+    
+
+                   
+                    </div>
+        </section>
+
+        <div class="divider scroll-animate"></div>
+    </main>
+    <div class="qr-modal" id="qrModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="qrTitle"
+        style="position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);padding:20px;">
+        <div class="qr-card">
+            <div class="qr-img">
+                <img src="/assets/screens/other/qr-play.svg" alt="QR code for StreakRise on Google Play" width="250" height="250">
+            </div>
+            <h3 id="qrTitle">Scan for Google Play</h3>
+            <p>Point your phone camera at the code to open StreakRise in the store.</p>
+            <button type="button" class="qr-close" id="qrClose" style="cursor:pointer;">Close</button>
+        </div>
+    </div>
+    <div id="footer-container"><!-- COMPONENT:footer -->
+
+<div class="footer-content">
+    <div class="footer-brand-card">
+        <a href="/" class="footer-brand">
+            <img src="/assets/icon.png" alt="" class="footer-brand-icon">
+            <span class="footer-brand-title">StreakRise</span>
+        </a>
+        <p class="footer-brand-description">
+            Build consistency one day at a time.
+        </p>
+    </div>
+
+    <div class="footer-links-group">
+        
+
+
+
+
+        <div class="footer-column">
+            <h3 class="footer-title">Explore</h3>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/blog/">Blog &amp; Topics</a>
+                <a href="/presskit.zip" download onclick="posthog.capture('presskit_downloaded')">Press Kit</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3 class="footer-title">Support</h3>
+            <div class="footer-links">
+                <a href="/feature-request/">Request a Feature</a>
+                <a href="/report-a-problem/">Report a Problem</a>
+                <a href="/account-deletion/">Account Deletion</a>
+                <a href="/contact/">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3 class="footer-title">Legal</h3>
+            <div class="footer-links">
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/terms-of-service/">Terms of Service</a>
+            </div>
+    </div>
+
+    
+</div>
+<div class="footer-bottom">
+        &copy; 2026 Kirner Mark Adrian
+    </div>
+<!-- /COMPONENT:footer -->
+</div>
+<script>
+
+
+    // Scroll animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                // Unobserve after animation to prevent re-triggering
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with scroll-animate class
+    document.addEventListener('DOMContentLoaded', () => {
+        const animateElements = document.querySelectorAll('.scroll-animate');
+        animateElements.forEach(el => observer.observe(el));
+
+        const vidObserver = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(() => { }) : e.target.pause()), { threshold: 0.4 });
+        document.querySelectorAll('video[data-lazy]').forEach(v => vidObserver.observe(v));
+
+        // Dynamic Google Play UTM rewrite — inherit source from URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmSource = urlParams.get('utm_source');
+        const utmMedium = urlParams.get('utm_medium');
+        const utmCampaign = urlParams.get('utm_campaign');
+
+        if (utmSource) {
+            document.querySelectorAll('.play-badge, .floating-top-bar').forEach(link => {
+                const href = new URL(link.href);
+                href.searchParams.set('utm_source', utmSource);
+                if (utmMedium) href.searchParams.set('utm_medium', utmMedium);
+                if (utmCampaign) href.searchParams.set('utm_campaign', utmCampaign);
+                href.searchParams.set('utm_content', 'streakrise_website');
+                link.href = href.toString();
+            });
+        }
+
+        // Play badge tracking (hero + final CTA)
+        document.querySelectorAll('.play-badge').forEach(badge => {
+            badge.addEventListener('click', () => {
+                if (!window.posthog) return;
+                posthog.capture('play_store_badge_clicked', {
+                    location: badge.closest('.hero-content') ? 'hero_section' : 'final_cta'
+                });
+            });
+        });
+
+        // QR modal (shared by every .qr-btn)
+        const qrModal = document.getElementById('qrModal');
+        const qrClose = document.getElementById('qrClose');
+        const qrButtons = document.querySelectorAll('.qr-btn');
+        if (qrModal && qrClose && qrButtons.length) {
+            let lastBtn = null;
+
+            const openQr = (btn) => {
+                lastBtn = btn;
+                qrModal.style.display = 'flex';
+                qrModal.setAttribute('aria-hidden', 'false');
+                qrClose.focus();
+                if (window.posthog) {
+                    posthog.capture('qr_opened', {
+                        location: btn.closest('.hero-content') ? 'hero_section' : 'final_cta'
+                    });
+                }
+            };
+
+            const closeQr = () => {
+                qrModal.style.display = 'none';
+                qrModal.setAttribute('aria-hidden', 'true');
+                if (lastBtn) lastBtn.focus();
+            };
+
+            qrButtons.forEach(btn => {
+                btn.addEventListener('click', () => openQr(btn));
+            });
+
+            qrClose.addEventListener('click', closeQr);
+
+            qrModal.addEventListener('click', e => {
+                if (e.target === qrModal) closeQr();
+            });
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && qrModal.style.display === 'flex') closeQr();
+            });
+        }
+
+        // Auto-clone badges for seamless loop
+        const track = document.getElementById('badgesTrack');
+        if (track) {
+            const clone = track.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+
+            const wrapper = document.createElement('div');
+            wrapper.style.cssText = 'display:flex; width:max-content;';
+            wrapper.appendChild(track.cloneNode(true));
+            wrapper.appendChild(clone);
+
+            const carousel = track.parentElement;
+            carousel.innerHTML = '';
+            carousel.appendChild(wrapper);
+            wrapper.style.cssText = 'display:flex; width:max-content; gap:50px;';
+            wrapper.style.animation = 'scrollBadges 12s linear infinite';
+
+            carousel.addEventListener('mouseenter', () => wrapper.style.animationPlayState = 'paused');
+            carousel.addEventListener('mouseleave', () => wrapper.style.animationPlayState = 'running');
+        }
+
+    }); // closing DOMContentLoaded
+
+</script>
+
+</body>
+
+</html>

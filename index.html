@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="/css/navigation.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/floating-bar.css">
-    <link rel="stylesheet" href="streakrise-styles.css?v=2">
+    <link rel="stylesheet" href="streakrise-styles.css?v=7">
     <script src="/components/analytics.js" defer></script>
     <script src="/js/scroll_effect.js" defer></script>
     <script type="application/ld+json">
@@ -84,86 +84,87 @@
     <div id="navigation-container"><!-- COMPONENT:navigation -->
 
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
-        <div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-overlay" id="navOverlay"></div>
 
-        <nav class="nav-menu" id="navMenu">
-            <div class="nav-menu-header">
-                <h2>Menu</h2>
-                <button class="nav-menu-close" id="menuClose">×</button>
-            </div>
+<nav class="nav-menu" id="navMenu">
+    <div class="nav-menu-header">
+        <h2>Menu</h2>
+        <button class="nav-menu-close" id="menuClose">×</button>
+    </div>
 
-            <div class="nav-menu-links">
-                <a href="/">Home</a>
-                <a href="/feature-request/">Request a Feature</a>
-                <a href="/report-a-problem/">Report a Problem</a>
-                <a href="/privacy-policy/">Privacy Policy</a>
-                <a href="/terms-of-service/">Terms Of Service</a>
-                <a href="/account-deletion/">Account Deletion</a>
-                <a href="/contact/">Contact</a>
-            </div>
-            </nav>
+    <div class="nav-menu-links">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog & Topics</a>
+        <a href="/feature-request/">Request a Feature</a>
+        <a href="/report-a-problem/">Report a Problem</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms Of Service</a>
+        <a href="/account-deletion/">Account Deletion</a>
+        <a href="/contact/">Contact</a>
+    </div>
+</nav>
 
-        <script>
-            // Menu functionality
-            (function () {
-                // Wait for DOM to be ready
-                function initMenu() {
-                    const menuToggle = document.getElementById('menuToggle');
-                    const menuClose = document.getElementById('menuClose');
-                    const navMenu = document.getElementById('navMenu');
-                    const navOverlay = document.getElementById('navOverlay');
+<script>
+    // Menu functionality
+    (function () {
+        // Wait for DOM to be ready
+        function initMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const menuClose = document.getElementById('menuClose');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
 
-                    if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
-                        setTimeout(initMenu, 100);
-                        return;
-                    }
+            if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
+                setTimeout(initMenu, 100);
+                return;
+            }
 
-                    menuToggle.addEventListener('click', () => {
-                        navMenu.classList.add('active');
-                        navOverlay.classList.add('active');
-                    });
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+                navOverlay.classList.add('active');
+            });
 
-                    menuClose.addEventListener('click', () => {
-                        navMenu.classList.remove('active');
-                        navOverlay.classList.remove('active');
-                    });
+            menuClose.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
 
-                    navOverlay.addEventListener('click', () => {
-                        navMenu.classList.remove('active');
-                        navOverlay.classList.remove('active');
-                    });
-                }
+            navOverlay.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navOverlay.classList.remove('active');
+            });
+        }
 
-                                                        if (document.readyState === 'loading') {
-                                                            document.addEventListener('DOMContentLoaded', initMenu);
-                                                        } else {
-                                                            initMenu();
-                                                        }
-                                                    })();
-                                                </script>
-                                        <!-- /COMPONENT:navigation -->
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMenu);
+        } else {
+            initMenu();
+        }
+    })();
+</script>
+<!-- /COMPONENT:navigation -->
         </div>
         <div id="floating-bar-container"><!-- COMPONENT:floating-bar -->
-            <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
-                target="_blank" rel="noopener noreferrer" class="floating-top-bar">
-                <span class="floating-brand">
-                    <img src="/assets/icon.png" alt="StreakRise Icon" class="floating-icon">
-                    <span class="floating-title">StreakRise</span>
-                </span>
-                <span class="floating-cta">Get The App
-                    <svg class="floating-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                </span>
-            </a>
-        <!-- /COMPONENT:floating-bar -->
+<a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
+    target="_blank" rel="noopener noreferrer" class="floating-top-bar">
+    <span class="floating-brand">
+        <img src="/assets/icon.png" alt="StreakRise Icon" class="floating-icon">
+        <span class="floating-title">StreakRise</span>
+    </span>
+    <span class="floating-cta">Get The App
+        <svg class="floating-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+    </span>
+</a>
+<!-- /COMPONENT:floating-bar -->
         </div>
 
     <div class="container">
@@ -192,7 +193,7 @@
 
                    
                     </div>
-                    <p class="hero-note">Free to start · Made by one indie developer</p>
+                    <p class="hero-note">Free · No account needed · Made by one indie developer</p>
             </div>
             <div class="hero-image">
                 <img src="/assets/screens/first_photo.webp" width="800" height="1002" alt="StreakRise habit tracker app screen" class="phone-mockup"
@@ -606,26 +607,56 @@
 
     <div id="footer-container"><!-- COMPONENT:footer -->
 
+<div class="footer-content">
+    <div class="footer-brand-card">
+        <a href="/" class="footer-brand">
+            <img src="/assets/icon.png" alt="" class="footer-brand-icon">
+            <span class="footer-brand-title">StreakRise</span>
+        </a>
+        <p class="footer-brand-description">
+            Build consistency one day at a time.
+        </p>
+    </div>
 
-        <footer>
-            <div class="footer-content">
-                <h3 class="footer-title">Pages</h3>
-                <div class="footer-links">
-                    <a href="/">Home</a>
-                    <a href="/feature-request/">Request a Feature</a>
-                    <a href="/account-deletion/">Account Deletion</a>
-                    <a href="/report-a-problem/">Report a Problem</a>
-                    <a href="/privacy-policy/">Privacy Policy</a>
-                    <a href="/terms-of-service/">Terms Of Service</a>
-                    <a href="/contact/">Contact</a>
-                    <a href="/presskit.zip" download onclick="posthog.capture('presskit_downloaded')">Press Kit</a>
-                </div>
-                <div class="footer-bottom">
-                    by © Kirner Mark Adrian 2025
-                </div>
+    <div class="footer-links-group">
+        
+
+
+
+
+        <div class="footer-column">
+            <h3 class="footer-title">Explore</h3>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/blog/">Blog &amp; Topics</a>
+                <a href="/presskit.zip" download onclick="posthog.capture('presskit_downloaded')">Press Kit</a>
             </div>
-        </footer>
-        <!-- /COMPONENT:footer -->
+        </div>
+
+        <div class="footer-column">
+            <h3 class="footer-title">Support</h3>
+            <div class="footer-links">
+                <a href="/feature-request/">Request a Feature</a>
+                <a href="/report-a-problem/">Report a Problem</a>
+                <a href="/account-deletion/">Account Deletion</a>
+                <a href="/contact/">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3 class="footer-title">Legal</h3>
+            <div class="footer-links">
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/terms-of-service/">Terms of Service</a>
+            </div>
+    </div>
+
+    
+</div>
+<div class="footer-bottom">
+        &copy; 2026 Kirner Mark Adrian
+    </div>
+<!-- /COMPONENT:footer -->
         </div>
     <script>
 
