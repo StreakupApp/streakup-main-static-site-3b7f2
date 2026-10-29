@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://streakrise.com/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <image:image>
       <image:loc>https://streakrise.com/assets/icons/website/favicon.ico</image:loc>
     </image:image>
@@ -13,26 +13,35 @@
   </url>
   <url>
     <loc>https://streakrise.com/contact/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-29</lastmod>
   </url>
   <url>
     <loc>https://streakrise.com/privacy-policy/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-29</lastmod>
   </url>
   <url>
     <loc>https://streakrise.com/terms-of-service/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-29</lastmod>
   </url>
   <url>
     <loc>https://streakrise.com/feature-request/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-29</lastmod>
   </url>
   <url>
     <loc>https://streakrise.com/account-deletion/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-29</lastmod>
   </url>
   <url>
     <loc>https://streakrise.com/report-a-problem/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-10-29</lastmod>
   </url>
+  <url>
+    <loc>https://streakrise.com/blog/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://streakrise.com/blog/are-streaks-meant-to-be-broken/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  
 </urlset>
