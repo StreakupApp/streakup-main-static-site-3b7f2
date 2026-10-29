@@ -163,7 +163,7 @@ function parseMd(file) {
         productText: fm.product_text || "",
 
         image: `/blog/assets/${fm.cover || slug + "/cover.jpg"}`,
-        ogImage: `${SITE}/assets/blog/${fm.og || slug + "/og.jpg"}`,
+        ogImage: `${SITE}/blog/assets/${fm.og || slug + "/og.jpg"}`,
         alt: fm.alt || fm.title,
         read: String(Math.max(1, Math.ceil(wordCount / 200))),
         words: wordCount,

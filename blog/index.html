@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Blog and Topics: Streak Philosophy, Habits & Productivity</title>
-    <link rel="icon" href="/assets/icons/website/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/website/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/website/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/website/apple-touch-icon.png">
-    <meta property="og:site_name" content="StreakRise">
-
+    <title>Blog and Topics: Streak Philosophy, Habits &amp; Productivity</title>
     <meta name="description"
         content="Explore the science of streaks, habit formation, and productivity. Learn why streaks work, how to build consistency, and get the most out of StreakRise.">
+
     <link rel="canonical" href="https://streakrise.com/blog/">
 
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/icons/website/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="/assets/icons/website/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="/assets/icons/website/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="/assets/icons/website/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/icons/website/site.webmanifest">
+
     <!-- Open Graph -->
-   <meta property="og:title" content="Blog and Topics | StreakRise">
+    <meta property="og:site_name" content="StreakRise">
+    <meta property="og:title" content="Blog and Topics | StreakRise">
     <meta property="og:description"
         content="Explore the science of streaks, habit formation, and productivity. Learn why streaks work, how to build consistency, and get the most out of StreakRise.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://streakrise.com/blog/">
-    <meta property="og:image" content="https://streakrise.com/blog/assets/blog/og-blog-index.jpg">
-    <meta property="og:image:secure_url" content="https://streakrise.com/blog/assets/blog/og-blog-index.jpg">
+    <meta property="og:image"
+        content="https://streakrise.com/assets/banner.png">
+    <meta property="og:image:secure_url"
+        content="https://streakrise.com/assets/banner.png">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Blog and Topics: Streak Philosophy and Habit Formation Articles">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:alt"
+        content="StreakRise blog about streak philosophy and habit formation">
 
-    <!-- Twitter -->
+    <!-- X (Twitter) -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blog and Topics: Streak Philosophy, Habits & Productivity">
+    <meta name="twitter:title"
+        content="Blog and Topics: Streak Philosophy, Habits &amp; Productivity">
     <meta name="twitter:description"
         content="Explore the science of streaks, habit formation, and productivity. Learn why streaks work, how to build consistency, and get the most out of StreakRise.">
-    <meta name="twitter:image" content="https://streakrise.com/assets/blog/og-blog-index.jpg">
-    <meta name="twitter:image:alt" content="Blog and Topics: Streak Philosophy and Habit Formation Articles">
+    <meta name="twitter:image"
+        content="https://streakrise.com/blog/assets/blog/og-blog-index.jpg">
+    <meta name="twitter:image:alt"
+        content="StreakRise blog about streak philosophy and habit formation">
 
-    <link rel="manifest" href="/assets/icons/website/site.webmanifest">
-    <link rel="shortcut icon" href="/assets/icons/website/favicon.ico">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/css/navigation.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/floating-bar.css">
     <link rel="stylesheet" href="../streakrise-styles.css?v=7">
-     <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/blog.css">
+
+    <!-- Scripts -->
     <script src="/components/analytics.js" defer></script>
     <script src="/js/scroll_effect.js" defer></script>
 
-       <!-- LD:START -->
+    <!-- Structured data -->
+    <!-- LD:START -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -79,7 +94,7 @@
         "@type": "Person",
         "name": "Mark Kirner"
       },
-      "image": "https://streakrise.com/assets/blog/are-streaks-meant-to-be-broken/og.jpg"
+      "image": "https://streakrise.com/blog/assets/are-streaks-meant-to-be-broken/og.jpg"
     }
   ]
 }
@@ -354,29 +369,51 @@
             });
         });
 
-        // QR modal (shared by every .qr-btn)
+        
+        // QR modal
         const qrModal = document.getElementById('qrModal');
         const qrClose = document.getElementById('qrClose');
         const qrButtons = document.querySelectorAll('.qr-btn');
+
         if (qrModal && qrClose && qrButtons.length) {
             let lastBtn = null;
+            let previousBodyOverflow = '';
+
+            const getFocusableElements = () =>
+                [...qrModal.querySelectorAll(
+                    'a[href], button:not([disabled]), input:not([disabled]), ' +
+                    'select:not([disabled]), textarea:not([disabled]), ' +
+                    '[tabindex]:not([tabindex="-1"])'
+                )].filter(el => el.getClientRects().length > 0);
 
             const openQr = (btn) => {
                 lastBtn = btn;
+                previousBodyOverflow = document.body.style.overflow;
+
                 qrModal.style.display = 'flex';
                 qrModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
                 qrClose.focus();
+
                 if (window.posthog) {
                     posthog.capture('qr_opened', {
-                        location: btn.closest('.hero-content') ? 'hero_section' : 'final_cta'
+                        location: btn.closest('.hero-content')
+                            ? 'hero_section'
+                            : 'final_cta'
                     });
                 }
             };
 
             const closeQr = () => {
+                if (qrModal.style.display !== 'flex') return;
+
                 qrModal.style.display = 'none';
                 qrModal.setAttribute('aria-hidden', 'true');
-                if (lastBtn) lastBtn.focus();
+                document.body.style.overflow = previousBodyOverflow;
+
+                if (lastBtn && lastBtn.isConnected) {
+                    lastBtn.focus();
+                }
             };
 
             qrButtons.forEach(btn => {
@@ -389,10 +426,38 @@
                 if (e.target === qrModal) closeQr();
             });
 
-            document.addEventListener('keydown', e => {
-                if (e.key === 'Escape' && qrModal.style.display === 'flex') closeQr();
+            qrModal.addEventListener('keydown', e => {
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeQr();
+                    return;
+                }
+
+                if (e.key !== 'Tab') return;
+
+                const focusable = getFocusableElements();
+                if (!focusable.length) {
+                    e.preventDefault();
+                    qrModal.focus();
+                    return;
+                }
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (
+                    !e.shiftKey &&
+                    document.activeElement === last
+                ) {
+                    e.preventDefault();
+                    first.focus();
+                }
             });
         }
+
 
         // Auto-clone badges for seamless loop
         const track = document.getElementById('badgesTrack');

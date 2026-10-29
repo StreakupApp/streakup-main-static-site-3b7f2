@@ -26,8 +26,8 @@
     <meta property="og:description" content="Streaks push us forward, but when the goal becomes the streak, we lose our freedom of choice. Here is why forgiveness matters.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://streakrise.com/blog/are-streaks-meant-to-be-broken/">
-    <meta property="og:image" content="https://streakrise.com/assets/blog/are-streaks-meant-to-be-broken/og.jpg">
-    <meta property="og:image:secure_url" content="https://streakrise.com/assets/blog/are-streaks-meant-to-be-broken/og.jpg">
+    <meta property="og:image" content="https://streakrise.com/blog/assets/are-streaks-meant-to-be-broken/og.jpg">
+    <meta property="og:image:secure_url" content="https://streakrise.com/blog/assets/are-streaks-meant-to-be-broken/og.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -42,7 +42,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Are streaks meant to be broken?">
     <meta name="twitter:description" content="Streaks push us forward, but when the goal becomes the streak, we lose our freedom of choice. Here is why forgiveness matters.">
-    <meta name="twitter:image" content="https://streakrise.com/assets/blog/are-streaks-meant-to-be-broken/og.jpg">
+    <meta name="twitter:image" content="https://streakrise.com/blog/assets/are-streaks-meant-to-be-broken/og.jpg">
     <meta name="twitter:image:alt" content="Are streaks meant to be broken?">
 
     <link rel="manifest" href="/assets/icons/website/site.webmanifest">
@@ -63,7 +63,7 @@
   "@type": "BlogPosting",
   "headline": "Are streaks meant to be broken?",
   "description": "Streaks push us forward, but when the goal becomes the streak, we lose our freedom of choice. Here is why forgiveness matters.",
-  "image": "https://streakrise.com/assets/blog/are-streaks-meant-to-be-broken/og.jpg",
+  "image": "https://streakrise.com/blog/assets/are-streaks-meant-to-be-broken/og.jpg",
   "datePublished": "2026-10-29T10:00:00+00:00",
   "dateModified": "2026-10-29T10:00:00+00:00",
   "author": {
@@ -534,29 +534,51 @@ Forgiveness is the acceptance of one's irregularity. It lets us cope with mistak
             });
         });
 
-        // QR modal (shared by every .qr-btn)
+        
+        // QR modal
         const qrModal = document.getElementById('qrModal');
         const qrClose = document.getElementById('qrClose');
         const qrButtons = document.querySelectorAll('.qr-btn');
+
         if (qrModal && qrClose && qrButtons.length) {
             let lastBtn = null;
+            let previousBodyOverflow = '';
+
+            const getFocusableElements = () =>
+                [...qrModal.querySelectorAll(
+                    'a[href], button:not([disabled]), input:not([disabled]), ' +
+                    'select:not([disabled]), textarea:not([disabled]), ' +
+                    '[tabindex]:not([tabindex="-1"])'
+                )].filter(el => el.getClientRects().length > 0);
 
             const openQr = (btn) => {
                 lastBtn = btn;
+                previousBodyOverflow = document.body.style.overflow;
+
                 qrModal.style.display = 'flex';
                 qrModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
                 qrClose.focus();
+
                 if (window.posthog) {
                     posthog.capture('qr_opened', {
-                        location: btn.closest('.hero-content') ? 'hero_section' : 'final_cta'
+                        location: btn.closest('.hero-content')
+                            ? 'hero_section'
+                            : 'final_cta'
                     });
                 }
             };
 
             const closeQr = () => {
+                if (qrModal.style.display !== 'flex') return;
+
                 qrModal.style.display = 'none';
                 qrModal.setAttribute('aria-hidden', 'true');
-                if (lastBtn) lastBtn.focus();
+                document.body.style.overflow = previousBodyOverflow;
+
+                if (lastBtn && lastBtn.isConnected) {
+                    lastBtn.focus();
+                }
             };
 
             qrButtons.forEach(btn => {
@@ -569,10 +591,38 @@ Forgiveness is the acceptance of one's irregularity. It lets us cope with mistak
                 if (e.target === qrModal) closeQr();
             });
 
-            document.addEventListener('keydown', e => {
-                if (e.key === 'Escape' && qrModal.style.display === 'flex') closeQr();
+            qrModal.addEventListener('keydown', e => {
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeQr();
+                    return;
+                }
+
+                if (e.key !== 'Tab') return;
+
+                const focusable = getFocusableElements();
+                if (!focusable.length) {
+                    e.preventDefault();
+                    qrModal.focus();
+                    return;
+                }
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (
+                    !e.shiftKey &&
+                    document.activeElement === last
+                ) {
+                    e.preventDefault();
+                    first.focus();
+                }
             });
         }
+
 
         // Auto-clone badges for seamless loop
         const track = document.getElementById('badgesTrack');
