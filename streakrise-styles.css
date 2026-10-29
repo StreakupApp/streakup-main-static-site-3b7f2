@@ -444,7 +444,13 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-
+.section-description a,
+.section-description a:visited,
+.section-description a:hover,
+.section-description a:active {
+    color: #ff7b00;
+    text-decoration: none;
+}
 .feature-row {
     display: flex;
     gap: 60px;
