@@ -502,11 +502,15 @@
     border-radius: 16px;
     margin-bottom: 40px;
 }
-
 @media (max-width: 600px) {
     .author-bio {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+    }
+
+    .author-bio-avatar {
+        align-self: center;
     }
 }
 
