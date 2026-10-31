@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="robots" content="noindex">
+    <script src="/components/analytics.js"></script>
+    <script>
+        posthog.capture('social_visit', { utm_source: 'reddit' });
+
+        const redirectUrl = new URL('/', window.location.origin);
+        redirectUrl.searchParams.set('utm_source', 'reddit');
+        redirectUrl.searchParams.set('utm_medium', 'social');
+        redirectUrl.searchParams.set('utm_campaign', 'reddit_r');
+
+        setTimeout(() => {
+            window.location.href = redirectUrl.toString();
+        }, 300);
+    </script>
+</head>
+
+</html>
