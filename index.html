@@ -47,38 +47,14 @@
     <link rel="stylesheet" href="streakrise-styles.css?v=7">
     <script src="/components/analytics.js" defer></script>
     <script src="/js/scroll_effect.js" defer></script>
+
     <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"StreakRise","alternateName":"Streak Rise","url":"https://streakrise.com/"}
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://streakrise.com/#org","name":"StreakRise","alternateName":["Streak Rise","streakrise"],"url":"https://streakrise.com/","logo":"https://streakrise.com/assets/icon.png","sameAs":["https://play.google.com/store/apps/details?id=com.mkaapps.streakup","https://www.producthunt.com/products/streakup-2","https://pitchwall.co/product/streakrise","https://x.com/streakrise","https://www.wikidata.org/wiki/Q141956792"]},
+{"@type":"WebSite","@id":"https://streakrise.com/#website","name":"StreakRise","alternateName":["Streak Rise","streakrise.com"],"url":"https://streakrise.com/","publisher":{"@id":"https://streakrise.com/#org"}},
+{"@type":"MobileApplication","@id":"https://streakrise.com/#app","name":"StreakRise: Build & Achieve","alternateName":"StreakRise","operatingSystem":"ANDROID","applicationCategory":"LifestyleApplication","publisher":{"@id":"https://streakrise.com/#org"},"url":"https://streakrise.com/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}, "sameAs":["https://www.wikidata.org/wiki/Q141956792"]}
+]}
 </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "StreakRise: Build & Achieve",
-      "operatingSystem": "ANDROID",
-      "applicationCategory": "ProductivityApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "url": "https://streakrise.com"
-    }
-    </script>
-    <script type="application/ld+json">
-                        {
-                          "@context": "https://schema.org",
-                          "@type": "Organization",
-                          "name": "StreakRise",
-                          "url": "https://streakrise.com",
-                          "logo": "https://streakrise.com/assets/icon.png",
-                          "sameAs": [
-                            "https://play.google.com/store/apps/details?id=com.mkaapps.streakup",
-                            "https://www.producthunt.com/products/streakup-2",
-                            "https://pitchwall.co/product/streakrise"
-                          ]
-                        }
-                        </script>
 
 </head>
 
@@ -87,165 +63,168 @@
     <div id="navigation-container"><!-- COMPONENT:navigation -->
 
 
-<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-<div class="nav-overlay" id="navOverlay"></div>
+        <div class="nav-overlay" id="navOverlay"></div>
 
-<nav class="nav-menu" id="navMenu">
-    <div class="nav-menu-header">
-        <h2>Menu</h2>
-        <button class="nav-menu-close" id="menuClose">×</button>
+        <nav class="nav-menu" id="navMenu">
+            <div class="nav-menu-header">
+                <h2>Menu</h2>
+                <button class="nav-menu-close" id="menuClose">×</button>
+            </div>
+
+            <div class="nav-menu-links">
+                <a href="/">Home</a>
+                <a href="/blog/">Blog & Topics</a>
+                <a href="/feature-request/">Request a Feature</a>
+                <a href="/report-a-problem/">Report a Problem</a>
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/terms-of-service/">Terms Of Service</a>
+                <a href="/account-deletion/">Account Deletion</a>
+                <a href="/contact/">Contact</a>
+            </div>
+        </nav>
+
+        <script>
+            // Menu functionality
+            (function () {
+                // Wait for DOM to be ready
+                function initMenu() {
+                    const menuToggle = document.getElementById('menuToggle');
+                    const menuClose = document.getElementById('menuClose');
+                    const navMenu = document.getElementById('navMenu');
+                    const navOverlay = document.getElementById('navOverlay');
+
+                    if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
+                        setTimeout(initMenu, 100);
+                        return;
+                    }
+
+                    menuToggle.addEventListener('click', () => {
+                        navMenu.classList.add('active');
+                        navOverlay.classList.add('active');
+                    });
+
+                    menuClose.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        navOverlay.classList.remove('active');
+                    });
+
+                    navOverlay.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        navOverlay.classList.remove('active');
+                    });
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initMenu);
+                } else {
+                    initMenu();
+                }
+            })();
+        </script>
+        <!-- /COMPONENT:navigation -->
     </div>
-
-    <div class="nav-menu-links">
-        <a href="/">Home</a>
-        <a href="/blog/">Blog & Topics</a>
-        <a href="/feature-request/">Request a Feature</a>
-        <a href="/report-a-problem/">Report a Problem</a>
-        <a href="/privacy-policy/">Privacy Policy</a>
-        <a href="/terms-of-service/">Terms Of Service</a>
-        <a href="/account-deletion/">Account Deletion</a>
-        <a href="/contact/">Contact</a>
+    <div id="floating-bar-container"><!-- COMPONENT:floating-bar -->
+        <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
+            target="_blank" rel="noopener noreferrer" class="floating-top-bar">
+            <span class="floating-brand">
+                <img src="/assets/icon.png" alt="StreakRise Icon" class="floating-icon">
+                <span class="floating-title">StreakRise</span>
+            </span>
+            <span class="floating-cta">Get The App
+                <svg class="floating-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+            </span>
+        </a>
+        <!-- /COMPONENT:floating-bar -->
     </div>
-</nav>
-
-<script>
-    // Menu functionality
-    (function () {
-        // Wait for DOM to be ready
-        function initMenu() {
-            const menuToggle = document.getElementById('menuToggle');
-            const menuClose = document.getElementById('menuClose');
-            const navMenu = document.getElementById('navMenu');
-            const navOverlay = document.getElementById('navOverlay');
-
-            if (!menuToggle || !menuClose || !navMenu || !navOverlay) {
-                setTimeout(initMenu, 100);
-                return;
-            }
-
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.add('active');
-                navOverlay.classList.add('active');
-            });
-
-            menuClose.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navOverlay.classList.remove('active');
-            });
-
-            navOverlay.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navOverlay.classList.remove('active');
-            });
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initMenu);
-        } else {
-            initMenu();
-        }
-    })();
-</script>
-<!-- /COMPONENT:navigation -->
-        </div>
-        <div id="floating-bar-container"><!-- COMPONENT:floating-bar -->
-<a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
-    target="_blank" rel="noopener noreferrer" class="floating-top-bar">
-    <span class="floating-brand">
-        <img src="/assets/icon.png" alt="StreakRise Icon" class="floating-icon">
-        <span class="floating-title">StreakRise</span>
-    </span>
-    <span class="floating-cta">Get The App
-        <svg class="floating-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
-    </span>
-</a>
-<!-- /COMPONENT:floating-bar -->
-        </div>
 
     <div class="container">
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="page-title">Consistency isn't about being perfect.<br>It's about <span class="highlight-orange">coming
+                <h1 class="page-title">Consistency isn't about being perfect.<br>It's about <span
+                        class="highlight-orange">coming
                         back.</span></h1>
-                <h2 class="hero-keyword-line">StreakRise: Habit & Streak Tracker That Adapts to You</h2>
-                <p class="page-subtitle">Miss a day without losing months of progress. Start with 3 days a week, grow at
-                    your pace, and feel every win.</p>
-                
-               <div class="badge-row" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:stretch;gap:12px;">
-    
-    <!-- QR Button (on the left) -->
-    <button type="button" class="qr-btn" id="qrOpen" aria-label="Show QR code">
-        <img src="/assets/icons/simple/qr-code.svg" alt="" width="28" height="28" aria-hidden="true">
-    </button>
+                <h2 class="hero-keyword-line">StreakRise habit tracker: build streaks that adapt to you</h2>
+                <p class="page-subtitle">Make a streak out of your habit and evolve with it. Start with only 3 days, and
+                    grow at your own pace.</p>
 
-    <!-- Google Play Button (on the right) -->
-    <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
-        target="_blank" rel="noopener noreferrer" class="play-badge"
-        aria-label="Get StreakRise on Google Play">
-        <img src="/assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" fetchpriority="high">
-    </a>
-    
+                <div class="badge-row"
+                    style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:stretch;gap:12px;">
 
-                   
-                    </div>
-                    <p class="hero-note">Free · No account needed · Made by one indie developer</p>
+                    <!-- QR Button (on the left) -->
+                    <button type="button" class="qr-btn" id="qrOpen" aria-label="Show QR code">
+                        <img src="/assets/icons/simple/qr-code.svg" alt="" width="28" height="28" aria-hidden="true">
+                    </button>
+
+                    <!-- Google Play Button (on the right) -->
+                    <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
+                        target="_blank" rel="noopener noreferrer" class="play-badge"
+                        aria-label="Get StreakRise on Google Play">
+                        <img src="/assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play"
+                            fetchpriority="high">
+                    </a>
+
+
+
+                </div>
+                <p class="hero-note">Free · No account needed · Made by one indie developer</p>
             </div>
             <div class="hero-image">
-                <img src="/assets/screens/first_photo.webp" width="800" height="1002" alt="StreakRise habit tracker app screen" class="phone-mockup"
-                    fetchpriority="high">
-                </div>
-                </section>
+                <img src="/assets/screens/first_photo.webp" width="800" height="1002"
+                    alt="StreakRise habit tracker app screen" class="phone-mockup" fetchpriority="high">
+            </div>
+        </section>
 
         <div class="quick-features-container scroll-animate">
-            <div class="feature-box"><img src="/assets/notification.svg" class="feature-box-icon" alt="Smart reminders"><span
-                    class="feature-box-title">Smart Reminders</span></div>
+            <div class="feature-box"><img src="/assets/notification.svg" class="feature-box-icon"
+                    alt="Smart reminders"><span class="feature-box-title">Smart Reminders</span></div>
             <div class="feature-box"><img src="/assets/social.svg" class="feature-box-icon" alt="Friend Streaks"><span
                     class="feature-box-title">Friend Streaks</span></div>
             <div class="feature-box"><img src="/assets/analytics.svg" class="feature-box-icon" alt="Analytics"><span
                     class="feature-box-title">Analytics</span></div>
             <div class="feature-box"><img src="/assets/home_widget.svg" class="feature-box-icon" alt="Home Widget"><span
                     class="feature-box-title">Home Widget</span></div>
-            </div>
+        </div>
         <section class="info-section">
             <div class="info-item scroll-animate">
-                <h2>Most habit apps break you. StreakRise adapts to you.</h2>
+                <h2>Most habit apps break you. StreakRise goes and adapts to you.</h2>
                 <p>Whether you're just getting started or you've never missed a day in your life, your streak fits your
                     level instead of punishing you for being human.</p>
             </div>
         </section>
-        
+
         <div class="divider scroll-animate"></div>
-        
+
         <!-- START WHERE YOU ARE -->
         <section class="section">
             <div class="feature-row scroll-animate">
                 <div class="feature-image">
-                    <img src="/assets/screens/edit_streak.webp" width="700" height="1458" alt="Create a custom habit streak with chosen active days"
-                        loading="lazy">
+                    <img src="/assets/screens/edit_streak.webp" width="700" height="1458"
+                        alt="Create a custom habit streak with chosen active days" loading="lazy">
                 </div>
                 <div class="feature-text">
                     <span class="eyebrow">Start where you are</span>
                     <h2>Your streak, your level</h2>
-                    <p>Not everyone begins at 7 days a week, and they shouldn't have to.</p>
+                    <p>Create your streak with a cute name, and configure it to your liking.</p>
                     <ul class="check-list">
                         <li>Start with just 3 active days and build at a pace you can keep</li>
-                        <li>Do it on a rest day and it counts as a bonus day, helping you level up</li>
+                        <li>Complete on a rest day and it counts as a bonus day, helping you level up</li>
                         <li>Prefer no shortcuts? Go Full Commitment from day one</li>
                     </ul>
                 </div>
-                </div>
+            </div>
         </section>
 
         <div class="divider scroll-animate"></div>
-        
+
         <!-- FORGIVENESS -->
         <section class="section">
             <div class="callout-card scroll-animate">
@@ -272,19 +251,19 @@
                 </video>
             </div>
         </section>
-  <div class="divider scroll-animate"></div>
+        <div class="divider scroll-animate"></div>
 
-<!-- INSIGHT -->
-<section class="section story-section">
-    <div class="story-head scroll-animate">
-        <div class="privacy-icon center"><img src="/assets/trend.svg" alt=""></div>
-        <h2>See the story behind your streak</h2>
-        <p>Every day you show up leaves a trace. Look back, learn what works, and see how far you've come.</p>
-    </div>
-    <div class="story-grid scroll-animate">
+        <!-- INSIGHT -->
+        <section class="section story-section">
+            <div class="story-head scroll-animate">
+                <div class="privacy-icon center"><img src="/assets/trend.svg" alt=""></div>
+                <h2>See the story behind your streak</h2>
+                <p>Every day you show up leaves a trace. Look back, learn what works, and see how far you've come.</p>
+            </div>
+            <div class="story-grid scroll-animate">
                 <article class="story-item">
-                    <img src="/assets/screens/mini_widgets/calendar.webp" alt="StreakRise calendar showing completed days"
-                        loading="lazy">
+                    <img src="/assets/screens/mini_widgets/calendar.webp"
+                        alt="StreakRise calendar showing completed days" loading="lazy">
                     <h3>Calendar</h3>
                     <p>Every day you showed up lit up at a glance, with bonus days and notes marked.</p>
                 </article>
@@ -295,69 +274,71 @@
                     <p>Capture what happened each day, then search and filter your notes to see what's working.</p>
                 </article>
                 <article class="story-item">
-                    <img src="/assets/screens/mini_widgets/analytics.webp" alt="StreakRise analytics with best and worst days"
-                        loading="lazy">
+                    <img src="/assets/screens/mini_widgets/analytics.webp"
+                        alt="StreakRise analytics with best and worst days" loading="lazy">
                     <h3>Analytics</h3>
                     <p>Your best days, toughest weeks and average performance over any period you choose.</p>
                 </article>
             </div>
         </section>
-        
-        <div class="divider scroll-animate"></div>
-        
-       <!-- SMART REMINDERS -->
-<section class="section">
-    <div class="feature-row scroll-animate">
-        <div class="feature-image">
-            <img src="/assets/screens/mini_widgets/notification.webp" alt="StreakRise smart reminder notification" loading="lazy">
-        </div>
-        <div class="feature-text">
-    <div class="feature-heading">
-        <div class="privacy-icon"><img src="/assets/notification.svg" alt=""></div>
-        <h2>Nudged at the right time, not any time</h2>
-    </div>
-    <p>StreakRise notices when you usually complete your habit and learns your perfect moment. The more
-        you use it, the better the timing gets.</p>
-            <ul class="check-list">
-                <li>Learns from the hours you actually finish your streak</li>
-                <li>No fixed alarms to set up and forget</li>
-                <li>Gentle, encouraging messages</li>
-            </ul>
-        </div>
-    </div>
-</section>
 
         <div class="divider scroll-animate"></div>
-<!-- HOME WIDGET -->
-<section class="section">
-    <div class="feature-row reverse scroll-animate">
-        <div class="feature-image">
-            <img src="/assets/screens/home_widget.webp" alt="StreakRise home screen widget" loading="lazy">
-        </div>
-        <div class="feature-text">
-    <div class="feature-heading">
-        <div class="privacy-icon"><img src="/assets/home_widget.svg" alt=""></div>
-        <h2>Your streak, always in sight</h2>
-    </div>
-            <p>See your streak count and an encouraging message right on your home screen, free for everyone.</p>
-            <ul class="check-list">
-                <li>Changes color through the day as it gets later</li>
-                <li>Shows whether today is done or still waiting</li>
-                <li>Matches your app theme</li>
-            </ul>
-        </div>
-    </div>
-</section>
+
+        <!-- SMART REMINDERS -->
+        <section class="section">
+            <div class="feature-row scroll-animate">
+                <div class="feature-image">
+                    <img src="/assets/screens/mini_widgets/notification.webp"
+                        alt="StreakRise smart reminder notification" loading="lazy">
+                </div>
+                <div class="feature-text">
+                    <div class="feature-heading">
+                        <div class="privacy-icon"><img src="/assets/notification.svg" alt=""></div>
+                        <h2>Nudged at the right time, not any time</h2>
+                    </div>
+                    <p>StreakRise notices when you usually complete your habit and learns your perfect moment. The more
+                        you use it, the better the timing gets.</p>
+                    <ul class="check-list">
+                        <li>Learns from the hours you actually finish your streak</li>
+                        <li>No fixed alarms to set up and forget</li>
+                        <li>Gentle, encouraging messages</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <div class="divider scroll-animate"></div>
-<!-- PRIVACY -->
-<section class="section privacy-section">
-    <div class="story-head scroll-animate">
-        <div class="privacy-icon center"><img src="/assets/lock.svg" alt=""></div>
-        <h2>Your data, your rules</h2>
-        <p>Pick how StreakRise stores your progress. You can change your mind anytime in settings.</p>
-    </div>
-    <div class="privacy-grid scroll-animate">
+        <!-- HOME WIDGET -->
+        <section class="section">
+            <div class="feature-row reverse scroll-animate">
+                <div class="feature-image">
+                    <img src="/assets/screens/home_widget.webp" alt="StreakRise home screen widget" loading="lazy">
+                </div>
+                <div class="feature-text">
+                    <div class="feature-heading">
+                        <div class="privacy-icon"><img src="/assets/home_widget.svg" alt=""></div>
+                        <h2>Your streak, always in sight</h2>
+                    </div>
+                    <p>See your streak count and an encouraging message right on your home screen, free for everyone.
+                    </p>
+                    <ul class="check-list">
+                        <li>Changes color through the day as it gets later</li>
+                        <li>Shows whether today is done or still waiting</li>
+                        <li>Matches your app theme</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider scroll-animate"></div>
+        <!-- PRIVACY -->
+        <section class="section privacy-section">
+            <div class="story-head scroll-animate">
+                <div class="privacy-icon center"><img src="/assets/lock.svg" alt=""></div>
+                <h2>Your data, your rules</h2>
+                <p>Pick how StreakRise stores your progress. You can change your mind anytime in settings.</p>
+            </div>
+            <div class="privacy-grid scroll-animate">
                 <div class="privacy-card">
                     <div class="privacy-icon"> <img src="/assets/cloud.svg" alt="Cloud"></div>
                     <h3>Cloud backup</h3>
@@ -391,33 +372,36 @@
                 </div>
                 <div class="duo-image-stack">
                     <div class="duo-image-shadow" aria-hidden="true"></div>
-                    <img src="/assets/screens/friend_streak.webp" alt="Friend streak in StreakRise" loading="lazy" class="duo-image">
+                    <img src="/assets/screens/friend_streak.webp" alt="Friend streak in StreakRise" loading="lazy"
+                        class="duo-image">
                     <span class="duo-badge">Premium</span>
                 </div>
-                </div>
-                </section>
+            </div>
+        </section>
 
         <div class="divider scroll-animate"></div>
 
- 
+
         <!-- THEMES + LANGUAGES -->
-<section class="section mosaic-showcase">
-    <div class="privacy-icon"><img src="/assets/paint.svg" alt=""></div>
-    <h2 class="section-title scroll-animate">Make it yours</h2>
-    <p class="section-description scroll-animate">Free themes included, more to unlock. Available in 8 languages
-        including French, Portuguese and Spanish.</p>
-    <div class="mosaic-panel scroll-animate">
-        <div class="mosaic-duo">
-            <img src="/assets/screens/Themes_showcase.webp" alt="StreakRise color themes" class="mosaic-image" loading="lazy">
-            <div class="mosaic-divider" aria-hidden="true"></div>
-            <img src="/assets/screens/languages.webp" alt="StreakRise available languages" class="mosaic-image" loading="lazy">
-        </div>
-        <span class="swatch swatch-1" style="background:#ff7b00;"></span>
-        <span class="swatch swatch-2" style="background:#8b5cf6;"></span>
-        <span class="swatch swatch-3" style="background:#22c55e;"></span>
-        <span class="swatch swatch-4" style="background:#ec4899;"></span>
-    </div>
-</section>
+        <section class="section mosaic-showcase">
+            <div class="privacy-icon"><img src="/assets/paint.svg" alt=""></div>
+            <h2 class="section-title scroll-animate">Make it yours</h2>
+            <p class="section-description scroll-animate">Free themes included, more to unlock. Available in 8 languages
+                including French, Portuguese and Spanish.</p>
+            <div class="mosaic-panel scroll-animate">
+                <div class="mosaic-duo">
+                    <img src="/assets/screens/Themes_showcase.webp" alt="StreakRise color themes" class="mosaic-image"
+                        loading="lazy">
+                    <div class="mosaic-divider" aria-hidden="true"></div>
+                    <img src="/assets/screens/languages.webp" alt="StreakRise available languages" class="mosaic-image"
+                        loading="lazy">
+                </div>
+                <span class="swatch swatch-1" style="background:#ff7b00;"></span>
+                <span class="swatch swatch-2" style="background:#8b5cf6;"></span>
+                <span class="swatch swatch-3" style="background:#22c55e;"></span>
+                <span class="swatch swatch-4" style="background:#ec4899;"></span>
+            </div>
+        </section>
 
         <div class="divider scroll-animate"></div>
 
@@ -455,19 +439,19 @@
                 </div>
             </div>
         </section>
-        
+
         <div class="divider scroll-animate"></div>
-        
-    <!-- BUILT WITH YOU -->
-<section class="section">
-    <div class="privacy-icon" style="margin: 0 auto 18px;"><img src="/assets/dialog.svg" alt=""></div>
-    <h2 class="section-title scroll-animate">Built with you</h2>
-    <p class="section-description scroll-animate">
-        StreakRise is made by one developer who reads every message. Got an idea or a bug?
-        Tell me from the Help section in the app, or
-        <a href="/feature-request/">request a feature</a>.
-    </p>
-</section>
+
+        <!-- BUILT WITH YOU -->
+        <section class="section">
+            <div class="privacy-icon" style="margin: 0 auto 18px;"><img src="/assets/dialog.svg" alt=""></div>
+            <h2 class="section-title scroll-animate">Built with you</h2>
+            <p class="section-description scroll-animate">
+                StreakRise is made by one developer who reads every message. Got an idea or a bug?
+                Tell me from the Help section in the app, or
+                <a href="/feature-request/">request a feature</a>.
+            </p>
+        </section>
 
         <div class="divider scroll-animate"></div>
 
@@ -501,25 +485,25 @@
                 </details>
             </div>
         </section>
-<h2 class="section-title scroll-animate">Jump into your streak!</h2>
-         <p class="section-description scroll-animate">Click below, download the app, so you can start tracking your habits in a modern, enjoyable way right now.</p>
+        <h2 class="section-title scroll-animate">Jump into your streak!</h2>
+        <p class="section-description scroll-animate">Click below, download the app, so you can start tracking your
+            habits in a modern, enjoyable way right now.</p>
         <div class="badge-row" style="display:flex;flex-direction:row;flex-wrap:nowrap;align-items:stretch;gap:12px;">
-    
-    
-    <button type="button" class="qr-btn" aria-label="Show QR code">
-        <img src="/assets/icons/simple/qr-code.svg" alt="" width="28" height="28" aria-hidden="true">
-    </button>
 
-    <!-- Google Play Button (on the right) -->
-    <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
-        target="_blank" rel="noopener noreferrer" class="play-badge"
-        aria-label="Get StreakRise on Google Play">
-        <img src="/assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" fetchpriority="high">
-    </a>
-    
 
-                   
-                    </div>
+            <button type="button" class="qr-btn" aria-label="Show QR code">
+                <img src="/assets/icons/simple/qr-code.svg" alt="" width="28" height="28" aria-hidden="true">
+            </button>
+
+            <!-- Google Play Button (on the right) -->
+            <a href="https://play.google.com/store/apps/details?id=com.mkaapps.streakup&utm_source=streakrise_website&utm_medium=referral&utm_campaign=launch"
+                target="_blank" rel="noopener noreferrer" class="play-badge" aria-label="Get StreakRise on Google Play">
+                <img src="/assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" fetchpriority="high">
+            </a>
+
+
+
+        </div>
 
         <div class="divider scroll-animate"></div>
         <script type="application/ld+json">
@@ -533,36 +517,43 @@
             <h2 class="section-title scroll-animate">Featured On</h2>
             <div class="badges-carousel">
                 <div class="badges-track" id="badgesTrack">
-                    <a href="https://startupfa.me/s/streakrise?utm_source=streakrise.com" target="_blank"><img loading="lazy" src="https://startupfa.me/badge?t=classic&theme=dark" alt="StreakRise - Featured on Startup Fame" width="171" height="54" /></a>
+                    <a href="https://startupfa.me/s/streakrise?utm_source=streakrise.com" target="_blank"><img
+                            loading="lazy" src="https://startupfa.me/badge?t=classic&theme=dark"
+                            alt="StreakRise - Featured on Startup Fame" width="171" height="54" /></a>
                     <a href="https://fazier.com/launches/streakrise.com" target="_blank"><img
                             src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=dark"
                             width=250 alt="Fazier badge" /></a>
                     <a href="https://auraplusplus.com/projects/streakrise-habit-streak-tracker" target="_blank"
                         rel="noopener noreferrer" class="badge-link">
-                        <img loading="lazy" src="https://auraplusplus.com/images/badges/featured-on-dark.svg" alt="Featured on Aura++"
-                            height="48" />
+                        <img loading="lazy" src="https://auraplusplus.com/images/badges/featured-on-dark.svg"
+                            alt="Featured on Aura++" height="48" />
                     </a>
-                    <a href="https://pitchwall.co/product/streakrise?utm_source=badge" target="_blank" rel="noopener noreferrer"
-                        class="badge-link">
-                        <img loading="lazy" src="https://pitchwall.co/images/featured/pitchwall-dark.png" alt="Featured on PitchWall" height="48" />
-                        </a>
-                        <a href="https://www.producthunt.com/products/streakup-2?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-streakup-2"
-                            target="_blank" rel="noopener noreferrer"><img
+                    <a href="https://pitchwall.co/product/streakrise?utm_source=badge" target="_blank"
+                        rel="noopener noreferrer" class="badge-link">
+                        <img loading="lazy" src="https://pitchwall.co/images/featured/pitchwall-dark.png"
+                            alt="Featured on PitchWall" height="48" />
+                    </a>
+                    <a href="https://www.producthunt.com/products/streakup-2?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-streakup-2"
+                        target="_blank" rel="noopener noreferrer"><img
                             alt="StreakRise - Premium habit tracking. Build real consistency &amp; foundation. | Product Hunt"
                             width="250" height="54"
                             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1164189&amp;theme=dark&amp;t=1781381339256"></a>
                     <a href="https://makerhunt.io/project/streakrise-build-and-achieve" target="_blank" rel="noopener">
-                        <img loading="lazy" src="https://makerhunt.io/badges/makerhunt-badge-dark.svg" alt="Featured on MakerHunt" width="200" height="60" />
+                        <img loading="lazy" src="https://makerhunt.io/badges/makerhunt-badge-dark.svg"
+                            alt="Featured on MakerHunt" width="200" height="60" />
                     </a>
                     <a href="https://sidehunt.io/project/streakrise-build-and-achieve" target="_blank" rel="noopener">
-                        <img loading="lazy" src="https://sidehunt.io/badges/sidehunt-badge-dark.svg" alt="Featured on Sidehunt" width="200" height="60" />
+                        <img loading="lazy" src="https://sidehunt.io/badges/sidehunt-badge-dark.svg"
+                            alt="Featured on Sidehunt" width="200" height="60" />
                     </a>
                     <a href="https://open-launch.com/projects/streakrise-build-achieve" target="_blank" rel="noopener">
-                        <img loading="lazy" src="https://open-launch.com/api/badge/0422a868-ea4f-40bb-96be-b15961f6822c/featured-dark.svg"
+                        <img loading="lazy"
+                            src="https://open-launch.com/api/badge/0422a868-ea4f-40bb-96be-b15961f6822c/featured-dark.svg"
                             alt="Featured on Open-Launch" width="200" height="50" />
                     </a>
                     <!-- tinystartups · Launched on Tiny Startups (dark) -->
-                    <a href="https://www.tinystartups.com/startup/streakup-build-achieve" target="_blank" rel="noopener" class="badge-link"
+                    <a href="https://www.tinystartups.com/startup/streakup-build-achieve" target="_blank" rel="noopener"
+                        class="badge-link"
                         style="display:inline-flex;align-items:center;gap:8px;height:50px;padding:0 14px;border-radius:10px;text-decoration:none;font-family:'Inter',system-ui,sans-serif;background:linear-gradient(#0E0B1F,#0E0B1F) padding-box,linear-gradient(90deg,#3525E6,#D81FE0,#22B8F0) border-box;border:1.5px solid transparent;color:#fff;box-sizing:border-box">
                         <svg width="22" height="22" viewBox="0 0 100 100" style="flex-shrink:0">
                             <defs>
@@ -572,7 +563,8 @@
                                     <stop offset="100%" stop-color="#22B8F0" />
                                 </linearGradient>
                             </defs>
-                            <path d="M50 6C52 32 68 48 94 50C68 52 52 68 50 94C48 68 32 52 6 50C32 48 48 32 50 6Z" fill="url(#tsg)" />
+                            <path d="M50 6C52 32 68 48 94 50C68 52 52 68 50 94C48 68 32 52 6 50C32 48 48 32 50 6Z"
+                                fill="url(#tsg)" />
                         </svg>
                         <span style="display:flex;flex-direction:column;line-height:1.1">
                             <span
@@ -585,8 +577,8 @@
 
                     <a href="https://www.foundrlist.com/product/streakrisebuildachieve?utm_source=badge&amp;utm_medium=embed"
                         target="_blank" rel="noopener">
-                        <img loading="lazy" src="https://www.foundrlist.com/api/badge/streakrisebuildachieve" alt="Featured on FoundrList" width="150"
-                            height="48" />
+                        <img loading="lazy" src="https://www.foundrlist.com/api/badge/streakrisebuildachieve"
+                            alt="Featured on FoundrList" width="150" height="48" />
                     </a>
                     <a href="https://openhunts.com" target="_blank" title="OpenHunts Club">
                         <img alt="OpenHunts Club Member" height="105" src="https://cdn.openhunts.com/badges/club.webp"
@@ -603,7 +595,8 @@
         style="position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);padding:20px;">
         <div class="qr-card">
             <div class="qr-img">
-                <img src="/assets/screens/other/qr-play.svg" alt="QR code for StreakRise on Google Play" width="250" height="250">
+                <img src="/assets/screens/other/qr-play.svg" alt="QR code for StreakRise on Google Play" width="250"
+                    height="250">
             </div>
             <h3 id="qrTitle">Scan for Google Play</h3>
             <p>Point your phone camera at the code to open StreakRise in the store.</p>
@@ -613,175 +606,175 @@
 
     <div id="footer-container"><!-- COMPONENT:footer -->
 
-<div class="footer-content">
-    <div class="footer-brand-card">
-        <a href="/" class="footer-brand">
-            <img src="/assets/icon.png" alt="" class="footer-brand-icon">
-            <span class="footer-brand-title">StreakRise</span>
-        </a>
-        <p class="footer-brand-description">
-            Build consistency one day at a time.
-        </p>
-    </div>
-
-    <div class="footer-links-group">
-        
-
-
-
-
-        <div class="footer-column">
-            <h3 class="footer-title">Explore</h3>
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="/blog/">Blog &amp; Topics</a>
-                <a href="/presskit.zip" download onclick="posthog.capture('presskit_downloaded')">Press Kit</a>
+        <div class="footer-content">
+            <div class="footer-brand-card">
+                <a href="/" class="footer-brand">
+                    <img src="/assets/icon.png" alt="" class="footer-brand-icon">
+                    <span class="footer-brand-title">StreakRise</span>
+                </a>
+                <p class="footer-brand-description">
+                    Build consistency one day at a time.
+                </p>
             </div>
-        </div>
 
-        <div class="footer-column">
-            <h3 class="footer-title">Support</h3>
-            <div class="footer-links">
-                <a href="/feature-request/">Request a Feature</a>
-                <a href="/report-a-problem/">Report a Problem</a>
-                <a href="/account-deletion/">Account Deletion</a>
-                <a href="/contact/">Contact</a>
+            <div class="footer-links-group">
+
+
+
+
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Explore</h3>
+                    <div class="footer-links">
+                        <a href="/">Home</a>
+                        <a href="/blog/">Blog &amp; Topics</a>
+                        <a href="/presskit.zip" download onclick="posthog.capture('presskit_downloaded')">Press Kit</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Support</h3>
+                    <div class="footer-links">
+                        <a href="/feature-request/">Request a Feature</a>
+                        <a href="/report-a-problem/">Report a Problem</a>
+                        <a href="/account-deletion/">Account Deletion</a>
+                        <a href="/contact/">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Legal</h3>
+                    <div class="footer-links">
+                        <a href="/privacy-policy/">Privacy Policy</a>
+                        <a href="/terms-of-service/">Terms of Service</a>
+                    </div>
+                </div>
+
+
             </div>
-        </div>
-
-        <div class="footer-column">
-            <h3 class="footer-title">Legal</h3>
-            <div class="footer-links">
-                <a href="/privacy-policy/">Privacy Policy</a>
-                <a href="/terms-of-service/">Terms of Service</a>
+            <div class="footer-bottom">
+                &copy; 2026 Kirner Mark Adrian
             </div>
-    </div>
-
-    
-</div>
-<div class="footer-bottom">
-        &copy; 2026 Kirner Mark Adrian
-    </div>
-<!-- /COMPONENT:footer -->
+            <!-- /COMPONENT:footer -->
         </div>
-    <script>
+        <script>
 
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    // Unobserve after animation to prevent re-triggering
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with scroll-animate class
-        document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll('.scroll-animate');
-            animateElements.forEach(el => observer.observe(el));
-
-            const vidObserver = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(() => { }) : e.target.pause()), { threshold: 0.4 });
-            document.querySelectorAll('video[data-lazy]').forEach(v => vidObserver.observe(v));
-
-            // Dynamic Google Play UTM rewrite — inherit source from URL params
-            const urlParams = new URLSearchParams(window.location.search);
-            const utmSource = urlParams.get('utm_source');
-            const utmMedium = urlParams.get('utm_medium');
-            const utmCampaign = urlParams.get('utm_campaign');
-
-            if (utmSource) {
-                document.querySelectorAll('.play-badge, .floating-top-bar').forEach(link => {
-                    const href = new URL(link.href);
-                    href.searchParams.set('utm_source', utmSource);
-                    if (utmMedium) href.searchParams.set('utm_medium', utmMedium);
-                    if (utmCampaign) href.searchParams.set('utm_campaign', utmCampaign);
-                    href.searchParams.set('utm_content', 'streakrise_website');
-                    link.href = href.toString();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        // Unobserve after animation to prevent re-triggering
+                        observer.unobserve(entry.target);
+                    }
                 });
-            }
+            }, observerOptions);
 
-            // Play badge tracking (hero + final CTA)
-            document.querySelectorAll('.play-badge').forEach(badge => {
-                badge.addEventListener('click', () => {
-                    if (!window.posthog) return;
-                    posthog.capture('play_store_badge_clicked', {
-                        location: badge.closest('.hero-content') ? 'hero_section' : 'final_cta'
+            // Observe all elements with scroll-animate class
+            document.addEventListener('DOMContentLoaded', () => {
+                const animateElements = document.querySelectorAll('.scroll-animate');
+                animateElements.forEach(el => observer.observe(el));
+
+                const vidObserver = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? e.target.play().catch(() => { }) : e.target.pause()), { threshold: 0.4 });
+                document.querySelectorAll('video[data-lazy]').forEach(v => vidObserver.observe(v));
+
+                // Dynamic Google Play UTM rewrite — inherit source from URL params
+                const urlParams = new URLSearchParams(window.location.search);
+                const utmSource = urlParams.get('utm_source');
+                const utmMedium = urlParams.get('utm_medium');
+                const utmCampaign = urlParams.get('utm_campaign');
+
+                if (utmSource) {
+                    document.querySelectorAll('.play-badge, .floating-top-bar').forEach(link => {
+                        const href = new URL(link.href);
+                        href.searchParams.set('utm_source', utmSource);
+                        if (utmMedium) href.searchParams.set('utm_medium', utmMedium);
+                        if (utmCampaign) href.searchParams.set('utm_campaign', utmCampaign);
+                        href.searchParams.set('utm_content', 'streakrise_website');
+                        link.href = href.toString();
+                    });
+                }
+
+                // Play badge tracking (hero + final CTA)
+                document.querySelectorAll('.play-badge').forEach(badge => {
+                    badge.addEventListener('click', () => {
+                        if (!window.posthog) return;
+                        posthog.capture('play_store_badge_clicked', {
+                            location: badge.closest('.hero-content') ? 'hero_section' : 'final_cta'
+                        });
                     });
                 });
-            });
 
-            // QR modal (shared by every .qr-btn)
-            const qrModal = document.getElementById('qrModal');
-            const qrClose = document.getElementById('qrClose');
-            const qrButtons = document.querySelectorAll('.qr-btn');
-            if (qrModal && qrClose && qrButtons.length) {
-                let lastBtn = null;
+                // QR modal (shared by every .qr-btn)
+                const qrModal = document.getElementById('qrModal');
+                const qrClose = document.getElementById('qrClose');
+                const qrButtons = document.querySelectorAll('.qr-btn');
+                if (qrModal && qrClose && qrButtons.length) {
+                    let lastBtn = null;
 
-                const openQr = (btn) => {
-                    lastBtn = btn;
-                    qrModal.style.display = 'flex';
-                    qrModal.setAttribute('aria-hidden', 'false');
-                    qrClose.focus();
-                    if (window.posthog) {
-                        posthog.capture('qr_opened', {
-                            location: btn.closest('.hero-content') ? 'hero_section' : 'final_cta'
-                        });
-                    }
-                };
+                    const openQr = (btn) => {
+                        lastBtn = btn;
+                        qrModal.style.display = 'flex';
+                        qrModal.setAttribute('aria-hidden', 'false');
+                        qrClose.focus();
+                        if (window.posthog) {
+                            posthog.capture('qr_opened', {
+                                location: btn.closest('.hero-content') ? 'hero_section' : 'final_cta'
+                            });
+                        }
+                    };
 
-                const closeQr = () => {
-                    qrModal.style.display = 'none';
-                    qrModal.setAttribute('aria-hidden', 'true');
-                    if (lastBtn) lastBtn.focus();
-                };
+                    const closeQr = () => {
+                        qrModal.style.display = 'none';
+                        qrModal.setAttribute('aria-hidden', 'true');
+                        if (lastBtn) lastBtn.focus();
+                    };
 
-                qrButtons.forEach(btn => {
-                    btn.addEventListener('click', () => openQr(btn));
-                });
+                    qrButtons.forEach(btn => {
+                        btn.addEventListener('click', () => openQr(btn));
+                    });
 
-                qrClose.addEventListener('click', closeQr);
+                    qrClose.addEventListener('click', closeQr);
 
-                qrModal.addEventListener('click', e => {
-                    if (e.target === qrModal) closeQr();
-                });
+                    qrModal.addEventListener('click', e => {
+                        if (e.target === qrModal) closeQr();
+                    });
 
-                document.addEventListener('keydown', e => {
-                    if (e.key === 'Escape' && qrModal.style.display === 'flex') closeQr();
-                });
-            }
+                    document.addEventListener('keydown', e => {
+                        if (e.key === 'Escape' && qrModal.style.display === 'flex') closeQr();
+                    });
+                }
 
-            // Auto-clone badges for seamless loop
-            const track = document.getElementById('badgesTrack');
-            if (track) {
-                const clone = track.cloneNode(true);
-                clone.setAttribute('aria-hidden', 'true');
+                // Auto-clone badges for seamless loop
+                const track = document.getElementById('badgesTrack');
+                if (track) {
+                    const clone = track.cloneNode(true);
+                    clone.setAttribute('aria-hidden', 'true');
 
-                const wrapper = document.createElement('div');
-                wrapper.style.cssText = 'display:flex; width:max-content;';
-                wrapper.appendChild(track.cloneNode(true));
-                wrapper.appendChild(clone);
+                    const wrapper = document.createElement('div');
+                    wrapper.style.cssText = 'display:flex; width:max-content;';
+                    wrapper.appendChild(track.cloneNode(true));
+                    wrapper.appendChild(clone);
 
-                const carousel = track.parentElement;
-                carousel.innerHTML = '';
-                carousel.appendChild(wrapper);
-                wrapper.style.cssText = 'display:flex; width:max-content; gap:50px;';
-                wrapper.style.animation = 'scrollBadges 12s linear infinite';
+                    const carousel = track.parentElement;
+                    carousel.innerHTML = '';
+                    carousel.appendChild(wrapper);
+                    wrapper.style.cssText = 'display:flex; width:max-content; gap:50px;';
+                    wrapper.style.animation = 'scrollBadges 12s linear infinite';
 
-                carousel.addEventListener('mouseenter', () => wrapper.style.animationPlayState = 'paused');
-                carousel.addEventListener('mouseleave', () => wrapper.style.animationPlayState = 'running');
-            }
+                    carousel.addEventListener('mouseenter', () => wrapper.style.animationPlayState = 'paused');
+                    carousel.addEventListener('mouseleave', () => wrapper.style.animationPlayState = 'running');
+                }
 
-        }); // closing DOMContentLoaded
+            }); // closing DOMContentLoaded
 
-    </script>
+        </script>
 
 </body>
 
